@@ -57,10 +57,26 @@ const SignUp = () => {
         setErrMsg("");
     }, [user, pwd, matchPwd]);
 
-    const handleSubmit = async e => {
+    useEffect(() => {
+        if (validName) {
+            document.querySelector("#userNameCheck svg path").classList.add("valid");
+        } else {
+            document.querySelector("#userNameCross svg path").classList.add("invalid");
+        }
+    }, [validName]);
+
+    useEffect(() => {
+        if (validPwd) {
+            document.querySelector("#pwdCheck svg path").classList.add("valid");
+        } else {
+            document.querySelector("#pwdCross svg path").classList.add("invalid");
+        }
+    }, [validPwd]);
+
+    /* const handleSubmit = async e => {
         // TODO: Setup backend and success function
         e.preventDefault();
-    };
+    }; */
 
     return (
         <section>
@@ -68,13 +84,13 @@ const SignUp = () => {
                 {errMsg}
             </p>
             <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <label htmlFor="username">
                     Username:
-                    <span className={validName ? "valid" : "hide"}>
+                    <span id="userNameCheck" className={validName ? "valid" : "hide"}>
                         <FontAwesomeIcon icon={faCheck} />
                     </span>
-                    <span className={validName || !user ? "hide" : "invalid"}>
+                    <span id="userNameCross" className={validName || !user ? "hide" : "invalid"}>
                         <FontAwesomeIcon icon={faTimes} />
                     </span>
                 </label>
@@ -103,10 +119,10 @@ const SignUp = () => {
 
                 <label htmlFor="password">
                     Password:
-                    <span className={validPwd ? "valid" : "hide"}>
+                    <span id="pwdCheck" className={validPwd ? "valid" : "hide"}>
                         <FontAwesomeIcon icon={faCheck} />
                     </span>
-                    <span className={validPwd || !pwd ? "hide" : "invalid"}>
+                    <span id="pwdCross" className={validPwd || !pwd ? "hide" : "invalid"}>
                         <FontAwesomeIcon icon={faTimes} />
                     </span>
                 </label>

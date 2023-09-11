@@ -66,12 +66,12 @@ button {
 }
 
 .valid {
-    color: limegreen;
+    fill: limegreen;
     margin-left: 0.25rem;
 }
 
 .invalid {
-    color: red;
+    fill: red;
     margin-left: 0.25rem;
 }
 
