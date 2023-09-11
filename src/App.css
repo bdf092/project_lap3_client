@@ -10,7 +10,7 @@
     display: flex;
 
     align-items: center;
-    max-width: 600px;
+    max-width: 100%;
     margin: 5px 0px 5px 0px;
 
     border-bottom: 1px solid #f2f2f2;
@@ -18,9 +18,9 @@
 
 .navbar .links {
     display: flex;
-    font-size: large;
+    font-size: 22px;
     justify-content: flex-end;
-    margin-left: 50vw;
+    margin-left: 45vw;
     white-space: nowrap;
 }
 .navbar a {
@@ -29,12 +29,12 @@
     padding: 6px;
 }
 .navbar a:hover {
-    color: rgb(0, 195, 255);
+    color: #7d8c45;
 }
 
 .navbar a.active {
     text-decoration: underline;
-    color: rgb(0, 195, 255);
+    color: #7d8c45;
 }
 
 main {

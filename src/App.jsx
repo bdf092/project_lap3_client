@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
-import { SignUpPage } from "./pages";
+import { SignUpPage, LoginPage } from "./pages";
 
 const App = () => {
     return (
@@ -9,6 +9,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<NavBar />}>
                     <Route path="/signup" element={<SignUpPage />} />
+                    <Route path="/login" element={<LoginPage />} />
                 </Route>
             </Routes>
         </div>
