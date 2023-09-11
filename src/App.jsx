@@ -2,7 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
 
-import { CreateQuiz, SignUpPage, LoginPage } from "./pages";
+
+import { HomePage, CreateQuiz, SignUpPage, LoginPage } from "./pages";
 
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
         <div className="App">
             <Routes>
                 <Route path="/" element={<NavBar />}>
+                <Route index element={<HomePage />} />
                     <Route path="/signup" element={<SignUpPage />} />
 
 
