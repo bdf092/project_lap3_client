@@ -7,18 +7,21 @@
     color: #333;
 }
 .navbar {
-    padding: 20px;
     display: flex;
+
     align-items: center;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 5px 0px 5px 0px;
+
     border-bottom: 1px solid #f2f2f2;
 }
-.navbar h1 {
-    color: rgb(0, 195, 255);
-}
+
 .navbar .links {
-    margin-left: auto;
+    display: flex;
+    font-size: large;
+    justify-content: flex-end;
+    margin-left: 50vw;
+    white-space: nowrap;
 }
 .navbar a {
     margin-left: 16px;
@@ -38,4 +41,8 @@ main {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
+}
+
+img {
+    max-width: 15rem;
 }
