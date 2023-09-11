@@ -12,7 +12,7 @@
     align-items: center;
     max-width: 100%;
     margin: 5px 0px 5px 0px;
-
+    height: 100px;
     border-bottom: 1px solid #f2f2f2;
 }
 
@@ -47,21 +47,22 @@ img {
     max-width: 15rem;
 }
 
-.form{
+.createquizform{
+    /* background-color: #ffe4c4AA;
+    padding: 20px;
+    border-radius: 10px; */
     position: absolute;
-    top: 55%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.form button{
-    
-}
+
 
 .addquestiontitle{
     position: absolute;
-    top: 19%;
-    left: 50%;
+    top: 30%;
+    left: 51%;
     transform: translate(-50%, -50%);
     font-size: 45px;
     font-weight: 600;
@@ -75,6 +76,6 @@ img {
     top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 800px;
-    width: 800px
+    height: 1000px;
+    width: 1000px
 }

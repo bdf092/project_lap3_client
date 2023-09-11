@@ -17,11 +17,10 @@ export default function CreateQuiz() {
         className='lottie'
   autoplay
   loop={true}
-  speed={3}
-  src="https://lottie.host/582af552-174e-4e3b-a1eb-a18e0614c233/RXSiv3VUCD.json"
+  src="https://lottie.host/946b8faa-dde7-47bc-bd5c-74d22034fcc9/gdYcYaygC9.json"
 >
 </Player>
-<div className='form'>
+<div className='createquizform'>
         <CreateQuizForm quizTitle={quizTitle} setQuizTitle={setQuizTitle} question={question} setQuestion={setQuestion} answer={answer} setAnswer={setAnswer} message={message} setMessage={setMessage} multiple={multiple} setMultipleCheckbox={setMultipleCheckbox} truefalse={truefalse} setTrueFalseCheckbox={setTrueFalseCheckbox}/>
         </div>
     </div>
