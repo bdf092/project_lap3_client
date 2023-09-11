@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
-import { CreateQuiz, SignUpPage } from "./pages";
+
+import { CreateQuiz, SignUpPage, LoginPage } from "./pages";
 
 
 const App = () => {
@@ -12,7 +13,10 @@ const App = () => {
                     <Route path="/signup" element={<SignUpPage />} />
 
 
+
                     <Route path="/createquiz" element={<CreateQuiz />} />
+                      
+                    <Route path="/login" element={<LoginPage />} />
                 </Route>
             </Routes>
         </div>
