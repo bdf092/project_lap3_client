@@ -46,3 +46,35 @@ main {
 img {
     max-width: 15rem;
 }
+
+.form{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form button{
+    
+}
+
+.addquestiontitle{
+    position: absolute;
+    top: 19%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    font-weight: 600;
+    color: #095F84;
+    text-align: center;
+   
+}
+
+.lottie{
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 800px;
+    width: 800px
+}
