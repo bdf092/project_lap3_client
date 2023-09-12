@@ -95,7 +95,9 @@ const SignUp = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <Link to="/login">Sign in</Link>
+                        <Link to="/login" style={{ textDecoration: "underline" }}>
+                            Sign in
+                        </Link>
                     </p>
                 </section>
             ) : (
@@ -218,7 +220,9 @@ const SignUp = () => {
 
                     <p>
                         Already registered? <br />
-                        <Link to="/login">Sign in</Link>
+                        <Link to="/login" style={{ textDecoration: "underline" }}>
+                            Sign in
+                        </Link>
                     </p>
                 </section>
             )}
