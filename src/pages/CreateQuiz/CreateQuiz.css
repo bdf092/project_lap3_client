@@ -1,0 +1,33 @@
+
+.createquizform{
+    /* background-color: #ffe4c4AA;
+    padding: 20px;
+    border-radius: 10px; */
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.addquestiontitle{
+    position: absolute;
+    top: 30%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    font-weight: 600;
+    color: #095F84;
+    text-align: center;
+   
+}
+
+.lottie{
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 1000px;
+    width: 1000px
+}

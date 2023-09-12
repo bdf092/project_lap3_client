@@ -1,18 +1,36 @@
 import React, {useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import {
-    faAngleRight, faAngleLeft
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './HomePage.css';
 
 
 
 const HomePage = () => {
-
+    // const [quizzes, setQuizzes] = useState([]);
+   
     const { id } = useParams();
+
+    // useEffect(() => {
+    //     async function loadQuizzes() {
+    //         const response = await fetch("http://localhost:3000/quizzes");
+    //         const data = await response.json();
+    //         setQuizzes(data);
+    //     };
+        
+    //     loadQuizzes();
+    // }, [])
+
+    // function displaySnacks() {
+    //     return quizzes
+    //             .filter(q => !vegetarianOnly || s.vegetarian)
+    //             .filter(q => !healthyOnly || s.healthy)
+    //             .filter(q => textFilter.length == 0 || q.name.toLowerCase().includes(textFilter.toLowerCase()))
+    //             .map(q => <QuizCard key={q.id} id={q.id} truefalse={q.truefalse} multiple={q.multiple} />)
+    // }
+
+
 
     let cards = [
 		
@@ -26,7 +44,7 @@ const HomePage = () => {
 				"https://res.cloudinary.com/cloudinary-ls-images/image/upload/b_black/v1558290036/img/logo-medium.jpg",
 			imageSocialAlt: "Placeholder Icon",
 			imageSocialTitle: "Placeholder Icon",
-			link: `https://localhost:3000/${id}`,
+			link: `https://localhost:3000/quizzes/${id}`,
 			title: "Quiz Title",
 			subTitle: "Quiz Subtitle",
 			text:
@@ -43,7 +61,7 @@ const HomePage = () => {
 				"https://res.cloudinary.com/cloudinary-ls-images/image/upload/b_black/v1558290036/img/logo-medium.jpg",
 			imageSocialAlt: "Placeholder Icon",
 			imageSocialTitle: "Placeholder Icon",
-			link: `https://localhost:3000/${id}`,
+			link: `https://localhost:3000/quizzes/${id}`,
 			title: "Quiz Title",
 			subTitle: "Quiz Subtitle",
 			text:
@@ -60,7 +78,7 @@ const HomePage = () => {
 				"https://res.cloudinary.com/cloudinary-ls-images/image/upload/b_black/v1558290036/img/logo-medium.jpg",
 			imageSocialAlt: "Placeholder Icon",
 			imageSocialTitle: "Placeholder Icon",
-			link: `https://localhost:3000/${id}`,
+			link: `https://localhost:3000/quizzes/${id}`,
 			title: "Quiz Title",
 			subTitle: "Quiz Subtitle",
 			text:
@@ -77,7 +95,7 @@ const HomePage = () => {
 				"https://res.cloudinary.com/cloudinary-ls-images/image/upload/b_black/v1558290036/img/logo-medium.jpg",
 			imageSocialAlt: "Placeholder Icon",
 			imageSocialTitle: "Placeholder Icon",
-			link: `https://localhost:3000/${id}`,
+			link: `https://localhost:3000/quizzes/${id}`,
 			title: "Quiz Title",
 			subTitle: "Quiz Subtitle",
 			text:
@@ -94,7 +112,7 @@ const HomePage = () => {
 				"https://res.cloudinary.com/cloudinary-ls-images/image/upload/b_black/v1558290036/img/logo-medium.jpg",
 			imageSocialAlt: "Placeholder Icon",
 			imageSocialTitle: "Placeholder Icon",
-			link: `https://localhost:3000/${id}`,
+			link: `https://localhost:3000/quizzes/${id}`,
 			title: "Quiz Title",
 			subTitle: "Quiz Subtitle",
 			text:
@@ -111,7 +129,7 @@ const HomePage = () => {
 				"https://res.cloudinary.com/cloudinary-ls-images/image/upload/b_black/v1558290036/img/logo-medium.jpg",
 			imageSocialAlt: "Placeholder Icon",
 			imageSocialTitle: "Placeholder Icon",
-			link: `https://localhost:3000/${id}`,
+			link: `https://localhost:3000/quizzes/${id}`,
 			title: "Quiz Title",
 			subTitle: "Quiz Subtitle",
 			text:
@@ -119,7 +137,7 @@ const HomePage = () => {
 		}
 	];
 
-    const Article = ({ data }) => {
+    const QuizCard = ({ data }) => {
         const {
           image,
           imageAlt,
@@ -154,6 +172,7 @@ const HomePage = () => {
                 </div>
               </div>
               <a href={link} target="_blank" />
+              <Link to={`/quizzes/${id}`}></Link>
             </figure>
           );
         };
@@ -164,7 +183,7 @@ const HomePage = () => {
               dots: false,
               infinite: true,
               speed: 500,
-              slidesToShow: 3,
+              slidesToShow: 4,
               slidesToScroll: 1,
               responsive: [
                 {
@@ -188,7 +207,7 @@ const HomePage = () => {
               <div className="carousel">
                 <Slider {...settings}>
                   {cards.map((item, index) => (
-                    <Article key={index} data={item} />
+                    <QuizCard key={index} data={item} />
                   ))}
                 </Slider>
                
@@ -201,7 +220,9 @@ const HomePage = () => {
         
         return (
             <>
+            <div className='undernav'>
             <h1 className='hometitle'>Quizzes</h1>
+            </div>
               <Carousel />
               <br />
             </>
