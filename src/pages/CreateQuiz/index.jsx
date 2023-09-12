@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CreateQuizForm } from "../../components";
-/* import {Player} from '@lottiefiles/react-lottie-player'; */
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function CreateQuiz() {
     const [quizTitle, setQuizTitle] = useState("");
