@@ -79,7 +79,7 @@ const SignUp = () => {
     }; */
 
     return (
-        <section>
+        <section className="signup-section">
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">
                 {errMsg}
             </p>

@@ -113,6 +113,13 @@ h3.card-title {
 	text-align: left;
 }
 
+.bottom {
+	display: flex;
+	place-items: end;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
   .slick-next,
 .slick-prev {
 	top: 108.5%;

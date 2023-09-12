@@ -6,7 +6,7 @@ const NavBar = () => {
         <>
             <nav className="navbar">
                 <div className="logo">
-                    <img src="../../../public/images/logo.png" alt="Think Fast Logo" />
+                    <img src="../../../images/logo.png" alt="Think Fast Logo" />
                 </div>
 
                 <div className="links">

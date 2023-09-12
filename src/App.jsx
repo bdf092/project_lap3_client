@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
 
 
-import { HomePage, CreateQuiz, SignUpPage, LoginPage } from "./pages";
+import { HomePage, CreateQuiz, SignUpPage, LoginPage, Quiz } from "./pages";
 
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
                 <Route index element={<HomePage />} />
                     <Route path="/signup" element={<SignUpPage />} />
 
-
+                    <Route path="/quiz" element={<Quiz/>}/>
 
                     <Route path="/createquiz" element={<CreateQuiz />} />
                       

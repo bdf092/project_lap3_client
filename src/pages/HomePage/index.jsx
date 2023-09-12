@@ -170,8 +170,15 @@ const HomePage = () => {
                 <div className="card-text-container">
                   <p className="card-text">{text}</p>
                 </div>
+                <div>
+                  <Link to={'/quiz'} className='bottom'>
+                    <button>Start Quiz</button>
+                  </Link>
+                </div>
+                
               </div>
               <a href={link} target="_blank" />
+              
               <Link to={`/quizzes/${id}`}></Link>
             </figure>
           );
