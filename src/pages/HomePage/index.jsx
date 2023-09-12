@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -199,6 +199,7 @@ const HomePage = () => {
         return (
             <>
             <h1 className='hometitle'>Quizzes</h1>
+			<Link to={`/createquiz`}> <button className='createbutton'> Create Quiz </button> </Link> 
               <Carousel />
               <br />
             </>

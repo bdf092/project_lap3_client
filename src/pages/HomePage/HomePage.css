@@ -1,12 +1,33 @@
 
-/* card carousel start */
-
 .hometitle{
     
     margin-bottom: 100px;
     margin-top: 50px;
     font-size: 45px;
 }
+
+
+.createbutton {
+    width: 100px;
+    height: 80px;
+    background: #7d8c45;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-family: "Quicksand";
+	position: absolute;
+	top: 15%;
+	left: 70%;
+
+}
+
+
+/* card carousel start */
+
 
 
 body {
@@ -65,6 +86,8 @@ a:hover {
 	padding: 0;
 	box-shadow: 0px 1px 1px 0px #ccc;
 	height: 323px;
+	border: solid 1px #7d8c45;
+	border-radius: 10px;
 }
 .card-hero-img {
 	width: 100%;
@@ -132,7 +155,7 @@ h3.card-title {
 .slick-next:before {
 	font-family: "Font Awesome\ 5 Free";
 	font-size: 50px;
-	color: #2a8631;
+	color: #7d8c45;
 	line-height: 1;
 	font-weight: 900;
 }
