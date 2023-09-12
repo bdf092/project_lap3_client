@@ -6,6 +6,7 @@ import {
     faUsersRectangle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import "./signUp.css";
 /* import { SlowBuffer } from "buffer"; */
 
@@ -83,7 +84,7 @@ const SignUp = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
+        // TODO: Connect to DB and add error messages
         console.log(user, pwd);
         setSuccess(true);
     };
@@ -94,7 +95,7 @@ const SignUp = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="/login">Sign In</a>
+                        <Link to="/login">Sign in</Link>
                     </p>
                 </section>
             ) : (
@@ -217,9 +218,7 @@ const SignUp = () => {
 
                     <p>
                         Already registered? <br />
-                        <span className="line">
-                            <a href="/login">Sign In</a>
-                        </span>
+                        <Link to="/login">Sign in</Link>
                     </p>
                 </section>
             )}
