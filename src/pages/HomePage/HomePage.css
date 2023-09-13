@@ -1,5 +1,5 @@
 
-#hometitle{
+.hometitle{
     margin-bottom: 100px;
     margin-top: 50px;
     font-size: 45px;
@@ -10,7 +10,7 @@
 }
 
 
-#createbutton {
+.createbutton {
     width: 100px;
     height: 80px;
     background: #7d8c45;
@@ -35,11 +35,11 @@
 
 
 
-#carousel {
+.carousel {
 	max-width: 1002px;
 	margin: auto;
 }
-#card-container {
+.card-container {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
@@ -52,13 +52,13 @@
 	text-align: left;
 	box-shadow: 0px 1px 1px 0px #ccc;
 }
-#card-container * {
+.card-container * {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-transition: all 0.25s ease;
 	transition: all 0.25s ease;
 }
-#card-container:before {
+.card-container:before {
 	position: absolute;
 	top: 10px;
 	bottom: 10px;
@@ -70,7 +70,7 @@
 	-webkit-transition-delay: 0.25s;
 	transition-delay: 0.25s;
 }
-#card-container a {
+.card-container a {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -78,18 +78,18 @@
 	right: 0;
 	z-index: 1;
 }
-#card {
+.card {
 	padding: 0;
 	box-shadow: 0px 1px 1px 0px #ccc;
 	height: 323px;
 	border: solid 2px #095F84;
 	border-radius: 10px;
 }
-#card-hero-img {
+.card-hero-img {
 	width: 100%;
 	height: 133px;
 }
-#card-heading-container {
+.card-heading-container {
 	padding: 19px 19px 0;
 	display: flex;
 	align-items: center;
@@ -99,19 +99,20 @@
 	border-radius: 50px;
 	max-width: 45px;
 }
-#card-title-container {
+.card-title-container {
 	padding-left: 10px;
 	text-align: left;
 }
 
-h3#card-title {
+h3.card-title {
+	text-align: center;
 	font-size: 23px;
 	color: #3a3a3a;
 	font-family: arial;
 	font-weight: bold;
 	margin: 0;
 }
-#card-sub-title {
+.card-sub-title {
 	font-size: 12px;
 	color: #adadad;
 	font-family: arial;
@@ -120,10 +121,10 @@ h3#card-title {
 	margin: 0;
 }
 
-#card-text-container {
+.card-text-container {
 	position: relative;
 }
-#card-text {
+.card-text {
 	font-size: 12px;
 	line-height: 1.584;
 	color: #3a3a3a;
@@ -137,6 +138,7 @@ h3#card-title {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 	/* height: 100%; */
 }
 
@@ -158,23 +160,23 @@ h3#card-title {
 	margin: 10px;
 }
 
-  #slick-next,
-#slick-prev {
+  .slick-next,
+.slick-prev {
 	top: 108.5%;
 }
-#slick-next {
+.slick-next {
 	right: 0;
 	text-align: left;
 	width: 49.3%;
 }
-#slick-prev {
+.slick-prev {
 	left: 0;
 	text-align: right;
 	margin-right: 1.4%;
 	width: 49.3%;
 }
-#slick-prev:before,
-#slick-next:before {
+.slick-prev:before,
+.slick-next:before {
 	font-family: "Font Awesome\ 5 Free";
 	font-size: 50px;
 	color: #7d8c45;
@@ -182,4 +184,3 @@ h3#card-title {
 	font-weight: 900;
 }
 /* card carousel end */
-
