@@ -1,4 +1,4 @@
-.addquestiontitle{
+#addquestiontitle {
     position: absolute;
     top: 28%;
     left: 47%;
@@ -7,33 +7,32 @@
     font-weight: 600;
     color: #095F84;
     text-align: center;
-   
 }
 
 
-.createquizform{
+#createquizform {
     position: absolute;
-    top: 57%;
+    top: 55%;
     left: 47%;
     transform: translate(-50%, -50%);
-    height: 250px;
+    height: 235px;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 350px;
+    width: 420px;
 }
 
-label[for],
-.message{
+#createquizform label[for]{
      font-size: 20px;
     font-weight: 700;
     color: #095F84;
     text-align: center;
-    margin-left: 10px;
-}
+    margin-left: 10px;}
 
 
-input[type="text"]{
-    font-size: 20px;
+
+
+#createquizform input[type="text"] {
+    font-size: 17px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     width: 90%;
@@ -42,7 +41,7 @@ input[type="text"]{
 }
 
 
-.lottie{
+#lottie{
     position: absolute;
     top: 53%;
     left: 45%;
@@ -51,7 +50,9 @@ input[type="text"]{
     width: 950px
 }
 
-form button {
+#next-button,
+#back-button,
+#create-button {
     width: 80px;
     height: 50px;
     background: #095F84;
@@ -66,29 +67,29 @@ form button {
     font-family: "Quicksand";
 }
 
-.next-button{
+#next-button{
     position: absolute;
-    top: 180%;
+    top: 195%;
     left: 75%;
     transform: translate(-50%, -50%);
     
 }
-.back-button{
+#back-button{
     position: absolute;
-    top: 180%;
+    top: 195%;
     left: 35%;
     transform: translate(-50%, -50%);
 }
 
-.create-button{
+#create-button{
     position: absolute;
-    top: 180%;
+    top: 195%;
     left: 75%;
     transform: translate(-50%, -50%);
 }
 
 
-.backarrow {
+#backarrow {
     position: absolute;
     top: 85%;
     left: 40%;
@@ -99,13 +100,13 @@ form button {
     color: #095F84 !important;
 }
 
-.message{
+#message {
     position: absolute;
-    top: 100%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #095F84;
     font-size: 20px;
     font-weight: 600;
-    font-family: "Quicksand";
+    font-family: "Quicksand"; 
 }
