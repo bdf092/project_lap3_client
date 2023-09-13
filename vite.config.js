@@ -8,8 +8,3 @@ export default defineConfig({
         environment: "jsdom",
     },
 });
-  plugins: [react()],
-  test: {
-    environment: 'jsdom',
-  }
-})
