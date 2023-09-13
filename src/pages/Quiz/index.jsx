@@ -53,7 +53,7 @@ const Quiz = () => {
             ))}
           </div>
         </div>
-        <button className='submit-button'>Submit</button>
+        <button id='submit-button'>Submit</button>
       </div>
     </>
   );
