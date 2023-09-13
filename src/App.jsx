@@ -3,8 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
 
 
-import { HomePage, CreateQuiz, SignUpPage, LoginPage, Quiz, Scoreboard } from "./pages";
-// import { HomePage, CreateQuiz, SignUpPage, LoginPage } from "./pages";
+import { HomePage, CreateQuiz, SignUpPage, LoginPage, Quiz, Scoreboard, NotFound } from "./pages";
 
 
 const App = () => {
