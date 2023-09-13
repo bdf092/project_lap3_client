@@ -18,6 +18,7 @@ const NavBar = () => {
                 </div>
             </header>
             <Outlet />
+            <footer id="footer">Think-Fast 2023</footer>
         </>
     );
 };

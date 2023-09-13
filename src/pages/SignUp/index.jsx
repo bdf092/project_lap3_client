@@ -135,7 +135,7 @@ const SignUp = () => {
                         aria-live="assertive">
                         {errMsg}
                     </p>
-                    <h1>Register</h1>
+                    <h1 className="register">Register</h1>
                     <form id="register-form" onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:

@@ -45,7 +45,7 @@ const Login = () => {
                         aria-live="assertive">
                         {errMsg}
                     </p>
-                    <h1>Sign In</h1>
+                    <h1 className="signin">Sign In</h1>
                     <form id="login-form" onSubmit={handleSubmit}>
                         <label htmlFor="username">Username:</label>
                         <input
