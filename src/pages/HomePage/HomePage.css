@@ -12,8 +12,8 @@
 
 #createbutton {
     width: 100px;
-    height: 80px;
-    background: #7d8c45;
+    height: 70px;
+    background: #095F84;
     border: none;
     cursor: pointer;
     font-size: 20px;
@@ -23,8 +23,9 @@
     transition: all 0.3s ease;
     font-family: "Quicksand";
 	position: absolute;
-	top: 15%;
-	left: 70%;
+	top: 85%;
+	left: 47%;
+	margin: 0 auto;
 
 }
 
@@ -36,21 +37,21 @@
 
 
 #carousel {
-	max-width: 1002px;
+	max-width: 100%;
 	margin: auto;
 }
 #card-container {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
-	margin: 26px auto 0 auto;
+	margin-left: 75px;
 	min-width: 230px;
 	max-width: 308px;
 	width: 100%;
 	color: #000;
 	font-size: 16px;
 	text-align: left;
-	box-shadow: 0px 1px 1px 0px #ccc;
+	
 }
 #card-container * {
 	-webkit-box-sizing: border-box;
@@ -78,13 +79,30 @@
 	right: 0;
 	z-index: 1;
 }
+
 #card {
 	padding: 0;
-	box-shadow: 0px 1px 1px 0px #ccc;
+	background-color: #f2f8f9;
+	border: 1px solid #f2f8f9;
 	height: 323px;
-	border: solid 2px #095F84;
 	border-radius: 10px;
-}
+
+	&:hover {
+		border: 1px solid #095F84;
+		box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
+		z-index: 500;
+	  }
+	}
+
+	#card:hover {
+		#card-title {color: #7d8c45;
+		  transition: opacity 0.3s linear;
+		  opacity: 1;
+		}
+	  }
+
+
+
 #card-hero-img {
 	width: 100%;
 	height: 133px;
@@ -94,11 +112,7 @@
 	display: flex;
 	align-items: center;
 }
-#card-social-icon {
-	padding: 0;
-	border-radius: 50px;
-	max-width: 45px;
-}
+
 #card-title-container {
 	padding-left: 10px;
 	text-align: left;
@@ -106,32 +120,17 @@
 h3#card-title {
 	text-align: center;
 	font-size: 23px;
-	color: #3a3a3a;
+	color: #095F84;
 	font-family: arial;
 	font-weight: bold;
-	margin: 0;
-}
-#card-sub-title {
-	font-size: 12px;
-	color: #adadad;
-	font-family: arial;
-	text-transform: uppercase;
-	font-weight: bold;
-	margin: 0;
+	margin-bottom: 30px;
+	font-family: 'quicksand', sans-serif;
 }
 
 #card-text-container {
 	position: relative;
 }
-#card-text {
-	font-size: 12px;
-	line-height: 1.584;
-	color: #3a3a3a;
-	font-family: arial;
-	padding: 19px;
-	margin: 0;
-	text-align: left;
-}
+
 
 .bio-img {
 	display: flex;
@@ -140,11 +139,14 @@ h3#card-title {
 	/* height: 100%; */
 }
 
+
+
 #bottom {
 	display: flex;
 	place-items: end;
 	justify-content: center;
 	text-decoration: none;
+	
 }
 
 #bottom button:hover, #submit-button:hover{
@@ -159,6 +161,9 @@ h3#card-title {
     padding: 10px 30px;
     background-color: #b5bf63;
 	margin: 10px;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 600;
+	color: #095F84;
 }
 
   .slick-next,
@@ -167,14 +172,15 @@ h3#card-title {
 }
 .slick-next {
 	right: 0;
-	text-align: left;
-	width: 49.3%;
+	text-align: center;
+	font-size: large;
+	width: 50%
 }
 .slick-prev {
 	left: 0;
-	text-align: right;
-	margin-right: 1.4%;
-	width: 49.3%;
+	text-align: center;
+	font-size: large;
+	width: 50%;
 }
 .slick-prev:before,
 .slick-next:before {
@@ -186,3 +192,14 @@ h3#card-title {
 }
 /* card carousel end */
 
+@media screen  and (max-width: 700px) {
+	
+	#createbutton {
+		
+		position: absolute;
+		top: 85%;
+		left: 35%;
+		margin: 0 auto;
+	
+	}
+}
