@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import QuizCard from '../QuizCard';
        
-const Carousel = ({ cards }) => {
+const Carousel = () => {
   
+  const [quizzes, setQuizzes] = useState([]);
+   
+    const { id } = useParams();
+
+    useEffect(() => {
+        async function loadQuizzes() {
+            const response = await fetch("https://think-fast.onrender.com/quizzes/");
+            const data = await response.json();
+            setQuizzes(data);
+        };
+        
+        loadQuizzes();
+    }, [])
+
   const settings = {
     dots: false,
     infinite: true,
@@ -31,8 +46,13 @@ const Carousel = ({ cards }) => {
   return (
     <div className="carousel">
       <Slider role='slider' {...settings}>
-        {cards.map((item, index) => (
-          <QuizCard key={index} data={item} />
+        {quizzes.map((quiz) => (
+          <Link 
+            to={`${quiz._id}`}
+            key={quiz._id}
+          >
+            <QuizCard data={quiz} />
+          </Link>
         ))}
       </Slider>
       
