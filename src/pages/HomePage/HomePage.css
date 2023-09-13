@@ -121,13 +121,13 @@ h3.card-title {
 
 button:hover{
 	cursor: pointer;
-	background-color: #b5bf63;
+	background-color: whitesmoke;
 }
 
 button {
-    border: solid 1px #b5bf63;
+    border: solid 3px #b5bf63;
     padding: 10px 30px;
-    background-color: #f2f2f2;
+    background-color: #b5bf63;
 	margin: 10px;
 }
 
