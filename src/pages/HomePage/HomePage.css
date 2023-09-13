@@ -117,7 +117,18 @@ h3.card-title {
 	display: flex;
 	place-items: end;
 	justify-content: center;
-	margin-bottom: 10px;
+}
+
+button:hover{
+	cursor: pointer;
+	background-color: #b5bf63;
+}
+
+button {
+    border: solid 1px #b5bf63;
+    padding: 10px 30px;
+    background-color: #f2f2f2;
+	margin: 10px;
 }
 
   .slick-next,
