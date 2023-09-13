@@ -16,7 +16,7 @@ const HomePage = () => {
         return (
             <>
             <div className='undernav'>
-            <h1 className='hometitle'>Quizzes</h1>
+            <h1 id='hometitle'>Quizzes</h1>
             </div>
               <Carousel />
               <br />
