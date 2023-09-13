@@ -8,7 +8,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./signUp.css";
-/* import { SlowBuffer } from "buffer"; */
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -84,9 +83,37 @@ const SignUp = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        // TODO: Connect to DB and add error messages
-        console.log(user, pwd);
-        setSuccess(true);
+
+        const v1 = USER_REGEX.test(user);
+        const v2 = PWD_REGEX.test(pwd);
+        if (!v1 || !v2) {
+            setErrMsg("Invalid Entry");
+            return;
+        }
+        try {
+            const response = await axios.post(REGISTER_URL, JSON.stringify({ user, pwd }), {
+                headers: { "Content-Type": "application/json" },
+                withCredentials: true,
+            });
+            console.log(response?.data);
+            console.log(response?.accessToken);
+            console.log(JSON.stringify(response));
+            setSuccess(true);
+            //clear state and controlled inputs
+            //need value attrib on inputs for this
+            setUser("");
+            setPwd("");
+            setMatchPwd("");
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg("No Server Response");
+            } else if (err.response?.status === 409) {
+                setErrMsg("Username Taken");
+            } else {
+                setErrMsg("Registration Failed");
+            }
+            errRef.current.focus();
+        }
     };
 
     return (
@@ -109,7 +136,7 @@ const SignUp = () => {
                         {errMsg}
                     </p>
                     <h1>Register</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form id="register-form" onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
                             <span id="userNameCheck" className={validName ? "valid" : "hide"}>

@@ -4,9 +4,9 @@ import { NavLink, Outlet } from "react-router-dom";
 const NavBar = () => {
     return (
         <>
-            <nav className="navbar">
+            <header className="navbar">
                 <div className="logo">
-                    <img src="../../../public/images/logo.png" alt="Think Fast Logo" />
+                    <img src="/images/logo.png" alt="Think Fast Logo" />
                 </div>
 
                 <div className="links">
@@ -16,9 +16,8 @@ const NavBar = () => {
                     <NavLink to="/login">Log In</NavLink>
                     <NavLink to="/signup">Sign Up</NavLink>
                 </div>
-            </nav>
+            </header>
             <Outlet />
-            
         </>
     );
 };

@@ -4,11 +4,10 @@
 * {
     margin: 0;
     font-family: "Quicksand";
-   
+    color: #333;
 }
 .navbar {
     display: flex;
-
     align-items: center;
     max-width: 100%;
     margin: 5px 0px 5px 0px;
@@ -47,4 +46,3 @@ main {
 img {
     max-width: 15rem;
 }
-

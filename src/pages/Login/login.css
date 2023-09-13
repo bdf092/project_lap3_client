@@ -14,7 +14,7 @@ section {
     width: 40%;
 }
 
-#register-form {
+#login-form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -39,45 +39,4 @@ section {
     > button {
         padding: 0.5rem;
     }
-}
-
-.instructions {
-    font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
-}
-
-.instructions > svg {
-    margin-right: 0.25rem;
-}
-
-.offscreen {
-    position: absolute;
-    left: -9999px;
-}
-
-.hide {
-    display: none;
-}
-
-.valid {
-    fill: limegreen;
-    margin-left: 0.25rem;
-}
-
-.invalid {
-    fill: red;
-    margin-left: 0.25rem;
-}
-
-.errmsg {
-    background-color: lightpink;
-    color: firebrick;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
 }
