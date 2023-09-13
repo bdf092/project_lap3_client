@@ -4,45 +4,9 @@
 * {
     margin: 0;
     font-family: "Quicksand";
-    color: #333;
-}
-.navbar {
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    margin: 5px 0px 5px 0px;
-    height: 100px;
-    border-bottom: 1px solid #f2f2f2;
 }
 
-.navbar .links {
-    display: flex;
-    font-size: 22px;
-    justify-content: flex-end;
-    margin-left: 45vw;
-    white-space: nowrap;
-}
-.navbar a {
-    margin-left: 16px;
-    text-decoration: none;
-    padding: 6px;
-}
-.navbar a:hover {
-    color: #7d8c45;
-}
-
-.navbar a.active {
-    text-decoration: underline;
-    color: #7d8c45;
-}
-
-main {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    color: #333;
-}
-
-img {
-    max-width: 15rem;
+body {
+    width: 100%;
+    overflow-x: hidden;
 }

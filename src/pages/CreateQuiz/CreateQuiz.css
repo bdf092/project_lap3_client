@@ -1,7 +1,7 @@
 #addquestiontitle {
     position: absolute;
-    top: 28%;
-    left: 47%;
+    top: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-size: 45px;
     font-weight: 600;
@@ -11,8 +11,8 @@
 
 #createquizform {
     position: absolute;
-    top: 55%;
-    left: 47%;
+    top: 50%;
+    left: 48%;
     transform: translate(-50%, -50%);
     height: 235px;
     overflow-y: scroll;
@@ -39,11 +39,11 @@
 
 #lottie {
     position: absolute;
-    top: 53%;
-    left: 45%;
+    top: 49%;
+    left: 48%;
     transform: translate(-50%, -50%);
-    height: 950px;
-    width: 950px;
+    height: 900px;
+    width: 900px;
 }
 
 #next-button,
@@ -85,8 +85,8 @@
 
 #backarrow {
     position: absolute;
-    top: 85%;
-    left: 40%;
+    top: 80%;
+    left: 45%;
     transform: translate(-50%, -50%);
     height: 50px;
     width: 50px;
@@ -96,7 +96,7 @@
 
 #message {
     position: absolute;
-    top: 95%;
+    top: 92%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #095f84;
