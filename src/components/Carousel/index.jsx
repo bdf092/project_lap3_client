@@ -30,7 +30,7 @@ const Carousel = ({ cards }) => {
 
   return (
     <div className="carousel">
-      <Slider {...settings}>
+      <Slider role='slider' {...settings}>
         {cards.map((item, index) => (
           <QuizCard key={index} data={item} />
         ))}

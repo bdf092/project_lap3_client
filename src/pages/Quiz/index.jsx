@@ -17,7 +17,7 @@ const Quiz = () => {
           </div>
           
         </div>
-        <button>Submit</button>
+        <button className='submit-button'>Submit</button>
       </div>
         
     </>

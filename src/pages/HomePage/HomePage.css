@@ -119,12 +119,12 @@ h3.card-title {
 	justify-content: center;
 }
 
-button:hover{
+.bottom button:hover, .submit-button:hover{
 	cursor: pointer;
 	background-color: whitesmoke;
 }
 
-button {
+.bottom button, .submit-button {
     border: solid 3px #b5bf63;
     padding: 10px 30px;
     background-color: #b5bf63;
