@@ -4,12 +4,12 @@ import { NavLink, Outlet } from "react-router-dom";
 const NavBar = () => {
     return (
         <>
-            <header className="navbar">
-                <div className="logo">
+            <nav id="navbar">
+                <div id="logo">
                     <img src="../../../images/logo.png" alt="Think Fast Logo" />
                 </div>
 
-                <div className="links">
+                <div id="links">
                     <NavLink to="/">Quizzes</NavLink>
                     <NavLink to="/profile">Profile</NavLink>
                     <NavLink to="/scoreboard">Score Board</NavLink>
@@ -18,7 +18,7 @@ const NavBar = () => {
                 </div>
             </header>
             <Outlet />
-            <footer id="footer">Think-Fast 2023</footer>
+            <footer id="footer">ThinkFast 2023</footer>
         </>
     );
 };
