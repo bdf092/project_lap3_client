@@ -1,22 +1,40 @@
-/* card carousel start */
 
-/* .hometitle{
-    
+.hometitle{
     margin-bottom: 100px;
     margin-top: 50px;
     font-size: 45px;
-}
-
-
-body {
+	font-weight: 600;
+	color: #095F84;
 	text-align: center;
-	margin: 0;
+	
 }
-a,
-a:hover {
-	text-decoration: none;
-	cursor: pointer;
+
+
+.createbutton {
+    width: 100px;
+    height: 80px;
+    background: #7d8c45;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-family: "Quicksand";
+	position: absolute;
+	top: 15%;
+	left: 70%;
+
 }
+
+
+/* card carousel start */
+
+
+
+
+
 .carousel {
 	max-width: 1002px;
 	margin: auto;
@@ -64,6 +82,8 @@ a:hover {
 	padding: 0;
 	box-shadow: 0px 1px 1px 0px #ccc;
 	height: 323px;
+	border: solid 2px #095F84;
+	border-radius: 10px;
 }
 .card-hero-img {
 	width: 100%;
@@ -74,7 +94,7 @@ a:hover {
 	display: flex;
 	align-items: center;
 }
-.card-social-icon {
+#card-social-icon {
 	padding: 0;
 	border-radius: 50px;
 	max-width: 45px;
@@ -83,7 +103,9 @@ a:hover {
 	padding-left: 10px;
 	text-align: left;
 }
+
 h3.card-title {
+	text-align: center;
 	font-size: 23px;
 	color: #3a3a3a;
 	font-family: arial;
@@ -112,6 +134,32 @@ h3.card-title {
 	text-align: left;
 }
 
+.bio-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	/* height: 100%; */
+}
+
+.bottom {
+	display: flex;
+	place-items: end;
+	justify-content: center;
+}
+
+.bottom button:hover, .submit-button:hover{
+	cursor: pointer;
+	background-color: whitesmoke;
+}
+
+.bottom button, .submit-button {
+    border: solid 3px #b5bf63;
+    padding: 10px 30px;
+    background-color: #b5bf63;
+	margin: 10px;
+}
+
   .slick-next,
 .slick-prev {
 	top: 108.5%;
@@ -131,7 +179,7 @@ h3.card-title {
 .slick-next:before {
 	font-family: "Font Awesome\ 5 Free";
 	font-size: 50px;
-	color: #2a8631;
+	color: #7d8c45;
 	line-height: 1;
 	font-weight: 900;
 } */
