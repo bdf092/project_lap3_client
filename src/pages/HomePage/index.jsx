@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Carousel from '../../components/Carousel';
 import './HomePage.css';
 
 
@@ -136,91 +136,6 @@ const HomePage = () => {
 				"This is some placeholder text to briefly describe the quiz."
 		}
 	];
-
-    const QuizCard = ({ data }) => {
-        const {
-          image,
-          imageAlt,
-          imageTitle,
-          imageSocial,
-          imageSocialAlt,
-          imageSocialTitle,
-          title,
-          subTitle,
-          text,
-          link,
-        } = data;
-
-        return (
-            <figure className="card-container">
-              <div className="card">
-                <img className="card-hero-img" src={image} alt={imageAlt} title={imageTitle} />
-                <div className="card-heading-container">
-                  <img
-                    className="card-social-icon"
-                    src={imageSocial}
-                    alt={imageSocialAlt}
-                    title={imageSocialTitle}
-                  />
-                  <div className="card-title-container">
-                    <h3 className="card-title">{title}</h3>
-                    <p className="card-sub-title">{subTitle}</p>
-                  </div>
-                </div>
-                <div className="card-text-container">
-                  <p className="card-text">{text}</p>
-                </div>
-                <div>
-                  <Link to={'/quiz'} className='bottom'>
-                    <button>Start Quiz</button>
-                  </Link>
-                </div>
-                
-              </div>
-              <a href={link} target="_blank" />
-              
-              <Link to={`/quizzes/${id}`}></Link>
-            </figure>
-          );
-        };
-        
-       
-        const Carousel = () => {
-            const settings = {
-              dots: false,
-              infinite: true,
-              speed: 500,
-              slidesToShow: 4,
-              slidesToScroll: 1,
-              responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 700,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-                ]
-            };
-          
-            return (
-              <div className="carousel">
-                <Slider {...settings}>
-                  {cards.map((item, index) => (
-                    <QuizCard key={index} data={item} />
-                  ))}
-                </Slider>
-               
-              </div>
-            );
-          };
           
          
         
@@ -230,7 +145,7 @@ const HomePage = () => {
             <div className='undernav'>
             <h1 className='hometitle'>Quizzes</h1>
             </div>
-              <Carousel />
+              <Carousel cards={cards} />
               <br />
             </>
 
