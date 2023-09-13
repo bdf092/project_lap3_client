@@ -1,0 +1,83 @@
+h1 {
+    margin-bottom: 100px;
+    margin-top: 50px;
+    font-size: 45px;
+}
+
+
+/* .ans {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: purple; */
+    /* height: 60vh; */
+/* } */
+
+/* .ans p {
+    
+    background-color: red;
+    border: solid 1px black;
+    padding: 30px 50px;
+    width: 20vw;
+    margin: 30px 20px;
+} */
+
+.individual-ans.clicked {
+    background-color: #b5bf63;
+}
+
+.ans p:hover{
+    cursor: pointer;
+    background-color: #b5bf63;
+}
+
+@media only screen and (min-width: 1401px) {
+    .ans {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    /* background-color: purple; */
+    /* height: 60vh; */
+}
+
+.ans p {
+    
+    /* background-color: red; */
+    border: solid 1px black;
+    padding: 30px 50px;
+    width: 20vw;
+    margin: 70px 20px;
+}
+}
+
+
+@media only screen and (max-width:1400px) {
+    /* .ans {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: purple; */
+        /* height: 60vh;
+    } */
+    .ans div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ans p {
+        
+        /* background-color: red; */
+        border: solid 1px black;
+        padding: 30px 50px;
+        width: 20vw;
+        margin: 20px;
+    }
+}
+
+.container {
+    margin-bottom: 50px;
+}

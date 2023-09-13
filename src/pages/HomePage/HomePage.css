@@ -104,6 +104,7 @@
 	text-align: left;
 }
 h3#card-title {
+	text-align: center;
 	font-size: 23px;
 	color: #3a3a3a;
 	font-family: arial;
@@ -132,23 +133,51 @@ h3#card-title {
 	text-align: left;
 }
 
-  #slick-next,
-#slick-prev {
+.bio-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* height: 100%; */
+}
+
+#bottom {
+	display: flex;
+	place-items: end;
+	justify-content: center;
+	text-decoration: none;
+}
+
+#bottom button:hover, #submit-button:hover{
+	cursor: pointer;
+	background-color: whitesmoke;
+}
+
+
+
+#bottom button, #submit-button {
+    border: solid 3px #b5bf63;
+    padding: 10px 30px;
+    background-color: #b5bf63;
+	margin: 10px;
+}
+
+  .slick-next,
+.slick-prev {
 	top: 108.5%;
 }
-#slick-next {
+.slick-next {
 	right: 0;
 	text-align: left;
 	width: 49.3%;
 }
-#slick-prev {
+.slick-prev {
 	left: 0;
 	text-align: right;
 	margin-right: 1.4%;
 	width: 49.3%;
 }
-#slick-prev:before,
-#slick-next:before {
+.slick-prev:before,
+.slick-next:before {
 	font-family: "Font Awesome\ 5 Free";
 	font-size: 50px;
 	color: #7d8c45;
