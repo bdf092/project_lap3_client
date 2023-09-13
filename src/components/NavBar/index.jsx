@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import './NavBar.css'
 
 const NavBar = () => {
     return (
@@ -18,7 +19,7 @@ const NavBar = () => {
                 </div>
             </nav>
             <Outlet />
-            
+            <footer id="footer">Think-Fast 2023</footer>
         </>
     );
 };

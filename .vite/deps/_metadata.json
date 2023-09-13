@@ -1,0 +1,56 @@
+{
+  "hash": "4a5a65c9",
+  "browserHash": "47ac2e73",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "fa599b26",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "581e581d",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "0381ebaf",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "f6a8a488",
+      "needsInterop": false
+    },
+    "@fortawesome/react-fontawesome": {
+      "src": "../../node_modules/@fortawesome/react-fontawesome/index.es.js",
+      "file": "@fortawesome_react-fontawesome.js",
+      "fileHash": "fea4e070",
+      "needsInterop": false
+    },
+    "react-slick": {
+      "src": "../../node_modules/react-slick/lib/index.js",
+      "file": "react-slick.js",
+      "fileHash": "b5fc723c",
+      "needsInterop": true
+    },
+    "@lottiefiles/react-lottie-player": {
+      "src": "../../node_modules/@lottiefiles/react-lottie-player/dist/lottie-react.esm.js",
+      "file": "@lottiefiles_react-lottie-player.js",
+      "fileHash": "a7d0ca5a",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-2PA4WPI3": {
+      "file": "chunk-2PA4WPI3.js"
+    },
+    "chunk-ROME4SDB": {
+      "file": "chunk-ROME4SDB.js"
+    }
+  }
+}
