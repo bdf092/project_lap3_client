@@ -23,6 +23,10 @@ h1 {
     margin: 30px 20px;
 } */
 
+.ans p:active {
+    background-color: #b5bf63;
+}
+
 .ans p:hover{
     cursor: pointer;
     background-color: #b5bf63;
@@ -72,4 +76,8 @@ h1 {
         width: 20vw;
         margin: 20px;
     }
+}
+
+.container {
+    margin-bottom: 50px;
 }

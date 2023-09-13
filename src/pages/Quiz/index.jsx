@@ -5,6 +5,7 @@ const Quiz = () => {
   return (
     <>
       <h1>Question 1</h1>
+      <div className='container'>
         <div className='ans'>
           <div>
             <p className='ans-1'>answer 1</p>
@@ -17,6 +18,8 @@ const Quiz = () => {
           
         </div>
         <button>Submit</button>
+      </div>
+        
     </>
     
   )
