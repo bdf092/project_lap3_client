@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import "./scoreboard.css"
 
 const Scoreboard = () => {
@@ -19,8 +19,49 @@ const Scoreboard = () => {
     const [users, setUsers] = useState(testUsers)
 
     const sortedUsers = testUsers.sort((a, b) => b.quizzesPlayed - a.quizzesPlayed);
+    const userData = useMemo(() => sortedUsers, []);
+    //header is for naming purposes, accessor is the actual property from object
+    const columns = useMemo(() => [
+    {
+        header: "ID",
+        accessor: "id",
+    },
+    {
+        header: "Username",
+        accessor: "name",
+    },
+    {
+        header: "Quizzes Played",
+        accessor: "quizzesPlayed",
+    }
+    ])
+
+    
+    const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data});
 
     return (
+        <>
+            <div>
+                <table {...getTableProps()}>
+                    <thead>
+                        {headerGroups.map((headerGroup) => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map((column) => (
+                                    <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                                ))}
+                            </tr>
+                        ))}
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </>
+    );
+};
+    
+
+export default Scoreboard;
+/*
         <div>
             <h2>Scoreboard</h2>
             <table>
@@ -31,7 +72,7 @@ const Scoreboard = () => {
                 </tr>
             </thead>
             <tbody>
-                {sortedUsers.map((user) => (
+                {userData.map((user) => (
                 <tr key={user.id}>
                     <td>{user.name}</td>
                     <td>{user.quizzesPlayed}</td>
@@ -40,8 +81,4 @@ const Scoreboard = () => {
             </tbody>
             </table>
         </div>
-    );
-};
-    
-
-export default Scoreboard;
+        */
