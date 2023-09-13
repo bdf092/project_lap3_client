@@ -23,7 +23,7 @@ h1 {
     margin: 30px 20px;
 } */
 
-.ans p:active {
+.individual-ans.clicked {
     background-color: #b5bf63;
 }
 
