@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-const CreateQuizForm = ({ setMessage }) => {
+const CreateQuizForm = ({setMessage}) => {
     const [step, setStep] = useState(0);
     const [quizTitle, setQuizTitle] = useState('');
     const initialQuestions = [
@@ -167,17 +167,17 @@ const CreateQuizForm = ({ setMessage }) => {
                         />
                     </div>
                 ))}
-                <div className="buttons">
+                <div id="buttons">
                     {step > 0 && (
-                        <button type="button" className="back-button" onClick={handleBackClick}>
+                        <button type="button" id="back-button" onClick={handleBackClick}>
                             Back
                         </button>
                     )}
-                    <button type="button" className="next-button" onClick={handleNextClick}>
+                    <button type="button" id="next-button" onClick={handleNextClick}>
                         Next
                     </button>
                     {step === 4 && (
-                        <button type="submit" className="create-button">
+                        <button type="submit" id="create-button">
                             Create
                         </button>
                     )}

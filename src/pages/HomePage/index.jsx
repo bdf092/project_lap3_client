@@ -131,23 +131,23 @@ const HomePage = () => {
         } = data;
 
         return (
-            <figure className="card-container">
-              <div className="card">
-                <img className="card-hero-img" src={image} alt={imageAlt} title={imageTitle} />
-                <div className="card-heading-container">
+            <figure id="card-container">
+              <div id="card">
+                <img id="card-hero-img" src={image} alt={imageAlt} title={imageTitle} />
+                <div id="card-heading-container">
                   <img
-                    className="card-social-icon"
+                    id="card-social-icon"
                     src={imageSocial}
                     alt={imageSocialAlt}
                     title={imageSocialTitle}
                   />
-                  <div className="card-title-container">
-                    <h3 className="card-title">{title}</h3>
-                    <p className="card-sub-title">{subTitle}</p>
+                  <div id="card-title-container">
+                    <h3 id="card-title">{title}</h3>
+                    <p id="card-sub-title">{subTitle}</p>
                   </div>
                 </div>
-                <div className="card-text-container">
-                  <p className="card-text">{text}</p>
+                <div id="card-text-container">
+                  <p id="card-text">{text}</p>
                 </div>
               </div>
               <a href={link} target="_blank" />
@@ -182,7 +182,7 @@ const HomePage = () => {
             };
           
             return (
-              <div className="carousel">
+              <div id="carousel">
                 <Slider {...settings}>
                   {cards.map((item, index) => (
                     <Article key={index} data={item} />
@@ -198,8 +198,8 @@ const HomePage = () => {
         
         return (
             <>
-            <h1 className='hometitle'>Quizzes</h1>
-			<Link to={`/createquiz`}> <button className='createbutton'> Create Quiz </button> </Link> 
+            <h1 id='hometitle'>Quizzes</h1>
+			<Link to={`/createquiz`}> <button id='createbutton'> Create Quiz </button> </Link> 
               <Carousel />
               <br />
             </>
