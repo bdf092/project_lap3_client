@@ -146,7 +146,9 @@ const HomePage = () => {
             <h1 className='hometitle'>Quizzes</h1>
             </div>
               <Carousel cards={cards} />
-              <br />
+			{/* <Link to={`/createquiz`}> <button className='createbutton'> Create Quiz </button> </Link> 
+              <Carousel />
+              <br /> */}
             </>
 
         )

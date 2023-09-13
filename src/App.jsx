@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
 
 
-import { HomePage, CreateQuiz, SignUpPage, LoginPage, Quiz } from "./pages";
+import { HomePage, CreateQuiz, SignUpPage, LoginPage, Quiz, Scoreboard } from "./pages";
+// import { HomePage, CreateQuiz, SignUpPage, LoginPage } from "./pages";
 
 
 const App = () => {
@@ -17,8 +18,8 @@ const App = () => {
                     <Route path="/quiz" element={<Quiz/>}/>
 
                     <Route path="/createquiz" element={<CreateQuiz />} />
-                      
                     <Route path="/login" element={<LoginPage />} />
+                    <Route path="/scoreboard" element={<Scoreboard />} />
                 </Route>
             </Routes>
         </div>

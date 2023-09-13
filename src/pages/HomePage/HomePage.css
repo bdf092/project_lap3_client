@@ -5,8 +5,36 @@
     margin-top: 50px;
     font-size: 45px;
 }
+<<<<<<< HEAD
 /* card carousel start */
 
+=======
+
+
+.createbutton {
+    width: 100px;
+    height: 80px;
+    background: #7d8c45;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-family: "Quicksand";
+	position: absolute;
+	top: 15%;
+	left: 70%;
+
+}
+
+
+/* card carousel start */
+
+
+
+>>>>>>> 05110e40d94651042e09216e4162ca9ce1bcb658
 body {
 	text-align: center;
 	margin: 0;
@@ -17,7 +45,11 @@ a:hover {
 	cursor: pointer;
 }
 .carousel {
+<<<<<<< HEAD
 	max-width: 1500px;
+=======
+	max-width: 1002px;
+>>>>>>> 05110e40d94651042e09216e4162ca9ce1bcb658
 	margin: auto;
 }
 .card-container {
@@ -63,7 +95,11 @@ a:hover {
 	padding: 0;
 	box-shadow: 0px 1px 1px 0px #ccc;
 	height: 323px;
+<<<<<<< HEAD
 	border: #7d8c45 3px solid;
+=======
+	border: solid 1px #7d8c45;
+>>>>>>> 05110e40d94651042e09216e4162ca9ce1bcb658
 	border-radius: 10px;
 }
 .card-hero-img {
@@ -113,6 +149,7 @@ h3.card-title {
 	text-align: left;
 }
 
+<<<<<<< HEAD
 .bottom {
 	display: flex;
 	place-items: end;
@@ -131,6 +168,8 @@ h3.card-title {
 	margin: 10px;
 }
 
+=======
+>>>>>>> 05110e40d94651042e09216e4162ca9ce1bcb658
   .slick-next,
 .slick-prev {
 	top: 108.5%;

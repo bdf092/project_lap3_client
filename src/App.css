@@ -4,7 +4,7 @@
 * {
     margin: 0;
     font-family: "Quicksand";
-    color: #333;
+   
 }
 .navbar {
     display: flex;
@@ -41,6 +41,7 @@ main {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
+    color: #333;
 }
 
 img {
