@@ -117,6 +117,7 @@
 	padding-left: 10px;
 	text-align: left;
 }
+
 h3#card-title {
 	text-align: center;
 	font-size: 23px;
@@ -132,7 +133,7 @@ h3#card-title {
 }
 
 
-.bio-img {
+#bio-img {
 	display: flex;
 	justify-content: center;
 	align-items: center;

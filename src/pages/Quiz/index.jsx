@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Questions } from "../../components";
 
@@ -18,51 +19,26 @@ const Quiz = () => {
             const fetchedQuestions = rawData.questions || [];
             setQuestions(fetchedQuestions);
             setQuiz(rawData.title);
-            console.log(rawData.title);
+            // console.log(rawData.title)
         }
         displayQuestions();
     }, [id]);
+
     const handleAnsSubmit = () => {
+        setCurrentQuestion(prevIndex => prevIndex + 1);
+    };
+
+    const onNextQuestion = () => {
         setCurrentQuestion(prevIndex => prevIndex + 1);
     };
 
     return (
         <>
-            <h1 id="quiztitle">Quiz 1</h1>
-            <h2 id="questiontitle">Question 1</h2>
-            <div className="container">
-                <div id="qa_section">
-                    <div className="ans">
-                        <div>
-                            {answers.map((answer, index) => (
-                                <p
-                                    key={index}
-                                    className={`individual-ans ${clicked[index] ? "clicked" : ""}`}
-                                    onClick={() => handleClick(index)}>
-                                    {answer}
-                                </p>
-                            ))}
-                        </div>
-                    </div>
-                    <button id="submit-button">Submit</button>
-                </div>
-                <div id="timersection">
-                    <p id="timer">Timer: {seconds}</p>
-                    <Player
-                        id="timerlottie"
-                        autoplay
-                        loop={true}
-                        src="https://lottie.host/06529719-8f17-4ea8-b07d-3e25376bce76/lyhJEsLaGx.json"></Player>
-                </div>
-            </div>
-            <Link to={`/`}>
-                {" "}
-                <FontAwesomeIcon icon={faCircleArrowLeft} id="backarrow" />{" "}
-            </Link>
+            <h1 id="quiztitle">{quiz}</h1>
 
-            <h1>{quiz}</h1>
             {currentQuestion < questions.length ? (
                 <Questions
+                    onNextQuestion={onNextQuestion}
                     key={questions[currentQuestion]._id}
                     question={questions[currentQuestion]}
                     onSubmit={handleAnsSubmit}
@@ -70,8 +46,11 @@ const Quiz = () => {
             ) : (
                 currentQuestion === questions.length && (
                     <>
-                        <h2>Congratulations! You have completed the quiz.</h2>
-                        <button>back to homepage</button>
+                        <h2 id="congrats">Congratulations! You have completed the quiz.</h2>
+                        <Link to={`/`}>
+                            {" "}
+                            <button id="backtohomepage">back to homepage</button>
+                        </Link>
                     </>
                 )
             )}

@@ -7,7 +7,7 @@ const NavBar = () => {
         <>
             <nav id="navbar">
                 <div id="logo">
-                    <img src="../../../images/logo.png" alt="Think Fast Logo" id="logo"/>
+                    <img src="../../../images/logo.png" alt="Think Fast Logo" id="logo" />
                 </div>
 
                 <div id="links">
@@ -20,9 +20,6 @@ const NavBar = () => {
                     <NavLink id="login" to="/login" role="link">
                         Log In
                     </NavLink>
-                    {/* <NavLink to="/signup" role="link">
-                        Sign Up
-                    </NavLink> */}
                 </div>
             </nav>
             <Outlet />
