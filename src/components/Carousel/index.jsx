@@ -47,12 +47,9 @@ const Carousel = () => {
     <div className="carousel">
       <Slider role='slider' {...settings}>
         {quizzes.map((quiz) => (
-          <Link 
-            to={`${quiz._id}`}
-            key={quiz._id}
-          >
-            <QuizCard data={quiz} />
-          </Link>
+          
+            <QuizCard key={quiz._id} data={quiz} />
+          
         ))}
       </Slider>
       

@@ -27,7 +27,12 @@ const QuizCard = ({ data }) => {
           {/* <p className="card-text">{text}</p> */}
         </div>
         <div>
-          <Link to={'/quiz'} id='bottom'><button>Start Quiz</button></Link>
+          <Link 
+            to={`${data._id}`}
+            key={data._id}
+            id='bottom'
+          >
+            <button>Start Quiz</button></Link>
         </div>
       </div>
       {/* <a href={link} target="_blank" />
