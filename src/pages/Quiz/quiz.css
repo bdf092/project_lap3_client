@@ -1,27 +1,42 @@
-h1 {
-    margin-bottom: 100px;
+#quiztitle, #questiontitle{
+    margin-bottom: 50px;
     margin-top: 50px;
-    font-size: 45px;
+    color: #095f84;
+    position: absolute;
 }
 
+#quiztitle{
+    top: 10%;
+    left: 47%;
+    font-size: 60px;
+}
 
-/* .ans {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* background-color: purple; */
-    /* height: 60vh; */
-/* } */
+#questiontitle{
+    top: 18%;
+    left: 25%;
+    font-size: 40px;
+}
 
-/* .ans p {
-    
-    background-color: red;
-    border: solid 1px black;
-    padding: 30px 50px;
-    width: 20vw;
-    margin: 30px 20px;
-} */
+#backarrow {
+    position: absolute;
+    top: 85%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    color: #095f84 !important;
+}
+
+#qa_section{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 50vh;
+}
+
 
 .individual-ans.clicked {
     background-color: #b5bf63;
@@ -32,36 +47,70 @@ h1 {
     background-color: #b5bf63;
 }
 
+#submit-button{
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+
+.container {
+    margin-bottom: 50px;
+}
+
+
+/* timer section styling start */
+
+#timerlottie{
+    position: absolute;
+    top: 55%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 500px;
+     
+}
+
+#timer{
+    position: absolute;
+    top: 23%;
+    left: 69%;
+    font-size: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #095f84;
+
+}
+
+/* timer section styling end */
+
+/* media queries start */
+
 @media only screen and (min-width: 1401px) {
     #ans {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: end;
-    /* background-color: purple; */
-    /* height: 60vh; */
 }
 
 #ans p {
     
     /* background-color: red; */
-    border: solid 1px black;
+    border: solid 1px #095f84;
+    border-radius: 10px;
     padding: 30px 50px;
     width: 20vw;
-    margin: 70px 20px;
+    margin: 55px 20px;
+    color:#095f84;
+    font-weight: 600;
 }
 }
 
 
 @media only screen and (max-width:1400px) {
-    /* #ans {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: purple; */
-        /* height: 60vh;
-    } */
     #ans div {
         display: flex;
         flex-direction: column;
@@ -71,12 +120,37 @@ h1 {
     #ans p {
         
         /* background-color: red; */
-        border: solid 1px black;
+        border: solid 1px #095f84;
+        border-radius: 10px;
         padding: 30px 50px;
         width: 20vw;
         margin: 20px;
     }
+
+    #questiontitle{
+        top: 15%;
+        left: 20%;
+        font-size: 40px;
+    }
+
+    #submit-button{
+        position: absolute;
+        top: 125%;
+        left: 47%;
+    }
 }
+
+@media only screen and (max-width:800px) {
+    #quiztitle{
+        top: 10%;
+        left: 50%;
+        font-size: 40px;
+    }
+
+}
+
+/* media queries end */
+
 
 #container {
     margin-bottom: 50px;
