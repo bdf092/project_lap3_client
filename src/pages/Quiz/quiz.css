@@ -112,8 +112,8 @@
 
 #backtohomepage{
     position: absolute;
-    top: 100%;
-    left: 20%;
+    top: 70%;
+    left: 50%;
     transform: translate(-50%, -50%);
     border: solid 3px #b5bf63;
 	border-radius: 5px;
