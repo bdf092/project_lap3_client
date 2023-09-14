@@ -158,6 +158,7 @@ h3#card-title {
 
 #bottom button, #submit-button {
     border: solid 3px #b5bf63;
+	border-radius: 5px;
     padding: 10px 30px;
     background-color: #b5bf63;
 	margin: 10px;
@@ -200,6 +201,5 @@ h3#card-title {
 		top: 85%;
 		left: 35%;
 		margin: 0 auto;
-	
 	}
 }
