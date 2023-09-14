@@ -101,9 +101,9 @@ const SignUp = () => {
                     withCredentials: true,
                 }
             );
-            console.log(response?.data);
-            console.log(response?.accessToken);
-            console.log(JSON.stringify(response));
+
+            console.log(JSON.stringify(response?.data));
+
             setSuccess(true);
             //clear state and controlled inputs
             //need value attrib on inputs for this
