@@ -4,3 +4,5 @@ coverage/
 .DS_Store
 .env
 .test.jsx
+node_modules
+.vite
