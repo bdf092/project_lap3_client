@@ -22,6 +22,7 @@ const questions = ({ question, onSubmit }) => {
     const handleAnsSubmit = () => {
       onSubmit()
     }
+    // const setQuestion = question.question
   
     const answers = question.answer_choices;
   
@@ -39,10 +40,13 @@ const questions = ({ question, onSubmit }) => {
 
     const correctAns = (answer) => {
       if (answer === question.correct_answer) {
+        console.log(question)
         console.log("correct")
         setIsAnsCorrect(true)
       } else {
         console.log("incorrect")
+        console.log(question)
+
         setIsAnsCorrect(false)
       }
     }
@@ -51,7 +55,8 @@ const questions = ({ question, onSubmit }) => {
       <>
         
         <div id='container'>
-          <h1>{question.questions}</h1>
+          <h1></h1>
+          <h2>{question.question}</h2>
           <p>
           Timer: {seconds}
           </p>
