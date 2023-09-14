@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {  useParams } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 import { Questions } from '../../components';
 
@@ -48,8 +49,8 @@ const Quiz = () => {
       ) : (
         currentQuestion === questions.length && (
         <>
-          <h2>Congratulations! You have completed the quiz.</h2>
-          <button>back to homepage</button>
+          <h2 id='congrats'>Congratulations! You have completed the quiz.</h2>
+          <Link to={`/`}>  <button id='backtohomepage'>back to homepage</button></Link> 
         </>
       )
       )}
