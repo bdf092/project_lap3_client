@@ -27,13 +27,13 @@ h1 {
     background-color: #b5bf63;
 }
 
-.ans p:hover{
+#ans p:hover{
     cursor: pointer;
     background-color: #b5bf63;
 }
 
 @media only screen and (min-width: 1401px) {
-    .ans {
+    #ans {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -42,7 +42,7 @@ h1 {
     /* height: 60vh; */
 }
 
-.ans p {
+#ans p {
     
     /* background-color: red; */
     border: solid 1px black;
@@ -54,7 +54,7 @@ h1 {
 
 
 @media only screen and (max-width:1400px) {
-    /* .ans {
+    /* #ans {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -62,13 +62,13 @@ h1 {
         background-color: purple; */
         /* height: 60vh;
     } */
-    .ans div {
+    #ans div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .ans p {
+    #ans p {
         
         /* background-color: red; */
         border: solid 1px black;
@@ -78,6 +78,6 @@ h1 {
     }
 }
 
-.container {
+#container {
     margin-bottom: 50px;
 }
