@@ -19,7 +19,7 @@ const QuizCard = ({ data }) => {
           /> */}
           <div id="card-title-container">
             <h3 id="card-title">{data.title}</h3>
-            <img className='bio-img' src="src\assets\biology-quiz.png" alt="biology image" />
+            <img className='bio-img' src="/images/biology-quiz.png" alt="biology image" />
             {/* <p className="card-sub-title">{subTitle}</p> */}
           </div>
         </div>
