@@ -14,9 +14,6 @@ const NavBar = () => {
                     <NavLink to="/" role="link">
                         Quizzes
                     </NavLink>
-                    <NavLink to="/profile" role="link">
-                        Profile
-                    </NavLink>
                     <NavLink to="/scoreboard" role="link">
                         Score Board
                     </NavLink>
