@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./login.css";
 
 const Login = () => {
     const userRef = useRef();
@@ -44,8 +45,8 @@ const Login = () => {
                         aria-live="assertive">
                         {errMsg}
                     </p>
-                    <h1>Sign In</h1>
-                    <form onSubmit={handleSubmit}>
+                    <h1 className="signin">Sign In</h1>
+                    <form id="login-form" onSubmit={handleSubmit}>
                         <label htmlFor="username">Username:</label>
                         <input
                             type="text"

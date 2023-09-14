@@ -1,24 +1,35 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import "./NavBar.css";
 
 const NavBar = () => {
     return (
         <>
-            <nav className="navbar">
-                <div className="logo">
+            <nav id="navbar">
+                <div id="logo">
                     <img src="../../../images/logo.png" alt="Think Fast Logo" />
                 </div>
 
-                <div className="links">
-                    <NavLink to="/">Quizzes</NavLink>
-                    <NavLink to="/profile">Profile</NavLink>
-                    <NavLink to="/scoreboard">Score Board</NavLink>
-                    <NavLink to="/login">Log In</NavLink>
-                    <NavLink to="/signup">Sign Up</NavLink>
+                <div id="links">
+                    <NavLink to="/" role="link">
+                        Quizzes
+                    </NavLink>
+                    <NavLink to="/profile" role="link">
+                        Profile
+                    </NavLink>
+                    <NavLink to="/scoreboard" role="link">
+                        Score Board
+                    </NavLink>
+                    <NavLink to="/login" role="link">
+                        Log In
+                    </NavLink>
+                    <NavLink to="/signup" role="link">
+                        Sign Up
+                    </NavLink>
                 </div>
             </nav>
             <Outlet />
-            
+            <footer id="footer">ThinkFast 2023</footer>
         </>
     );
 };
