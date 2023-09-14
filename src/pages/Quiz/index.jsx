@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import { Questions } from "../../components";
+
 import "./quiz.css";
+
 const Quiz = () => {
     const { id } = useParams();
     const [questions, setQuestions] = useState([]);
+    const [answers, setAnswers] = useState([]);
+    const [clicked, setClicked] = useState([]);
+    const [seconds, setSeconds] = useState(10);
     const [quiz, setQuiz] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
@@ -25,7 +31,8 @@ const Quiz = () => {
 
     return (
         <>
-            <h1>{quiz}</h1>
+            <h1 id="quiztitle">{quiz}</h1>
+
             {currentQuestion < questions.length ? (
                 <Questions
                     key={questions[currentQuestion]._id}
@@ -43,4 +50,5 @@ const Quiz = () => {
         </>
     );
 };
+
 export default Quiz;
