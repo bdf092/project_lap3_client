@@ -1,0 +1,49 @@
+/* CardGrid.css */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    gap: 20px; /* Gap between cards */
+    max-width: 800px; /* Limit the maximum width of the grid */
+    margin: 0 auto; /* Center the grid horizontally */
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 80%;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    font-size: 14px;
+    color: #555555;
+}
+
+.card-grid .card:nth-child(2) {
+    background-color: #ffcc00; 
+    color: #333333; 
+    margin-top: -60px;
+    box-shadow: 0px 9px 4px rgba(0, 0, 0, 0.3);
+    
+}
+
+.card-grid .card:nth-child(1) {
+    background-color: #c1c1c1; 
+    color: #000000; 
+    margin-top: -20px;
+    box-shadow: 6px 9px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-grid .card:nth-child(3) {
+    background-color: #d47f00; 
+    color: #020202; 
+    margin-top: -10px;
+    box-shadow: -6px 9px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,6 +1,40 @@
-/*
-css will go here... soon
-*/
+/* CSS for the Scoreboard component */
+
 #sb-container {
-    background-color: red;
+    background-color: rgb(208, 164, 164);
+    color: black;
+    padding: 20px;
+    height: 100vh; /* Use viewport height to make it fill the entire screen */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
 }
+    
+#top3 {
+    
+    height: 300px;
+    width: 80%; /* Adjust the width as needed */
+    margin-bottom: 20px; /* Add some space between top and bottom sections */
+    display: flex;
+    justify-content: space-between; /* Distribute cards evenly */
+}
+
+#allTableContent {
+    background-color: antiquewhite;
+    width: 60%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column; /* Stack the table and any other content vertically */
+    align-items: center;
+}
+
+/* Add styles for individual top 3 cards if needed */
+.card {
+    flex: 1;
+    /* Add more card styling here */
+}
+
+table {
+    width: 100%; /* Make the table fill the container's width */
+}
+    
