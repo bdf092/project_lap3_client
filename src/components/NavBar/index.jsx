@@ -11,11 +11,21 @@ const NavBar = () => {
                 </div>
 
                 <div id="links">
-                    <NavLink to="/" role="link">Quizzes</NavLink>
-                    <NavLink to="/profile" role="link">Profile</NavLink>
-                    <NavLink to="/scoreboard" role="link">Score Board</NavLink>
-                    <NavLink to="/login" role="link">Log In</NavLink>
-                    <NavLink to="/signup" role="link">Sign Up</NavLink>
+                    <NavLink to="/" role="link">
+                        Quizzes
+                    </NavLink>
+                    <NavLink to="/profile" role="link">
+                        Profile
+                    </NavLink>
+                    <NavLink to="/scoreboard" role="link">
+                        Score Board
+                    </NavLink>
+                    <NavLink to="/login" role="link">
+                        Log In
+                    </NavLink>
+                    <NavLink to="/signup" role="link">
+                        Sign Up
+                    </NavLink>
                 </div>
             </nav>
             <Outlet />
