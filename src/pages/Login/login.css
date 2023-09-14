@@ -1,10 +1,10 @@
-section {
+.loginForm {
     width: 100%;
     max-width: 420px;
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     padding: 1rem;
     background-color: #8bbbd9;
     border-radius: 10px;

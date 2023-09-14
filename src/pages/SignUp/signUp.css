@@ -1,3 +1,19 @@
+.registerForm {
+    width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    background-color: #8bbbd9;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-right: auto;
+    width: 40%;
+}
+
 .register {
     margin: 0;
     padding: 0;

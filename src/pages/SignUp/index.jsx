@@ -125,7 +125,7 @@ const SignUp = () => {
     return (
         <>
             {success ? (
-                <section>
+                <section className="registerForm">
                     <h1>Success!</h1>
                     <p>
                         <Link to="/login" style={{ textDecoration: "underline" }}>
@@ -134,7 +134,7 @@ const SignUp = () => {
                     </p>
                 </section>
             ) : (
-                <section>
+                <section className="registerForm">
                     <p
                         ref={errRef}
                         className={errMsg ? "errmsg" : "offscreen"}

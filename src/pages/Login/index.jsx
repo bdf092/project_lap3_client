@@ -59,7 +59,7 @@ const Login = () => {
     return (
         <>
             {success ? (
-                <section>
+                <section className="loginForm">
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
@@ -67,7 +67,7 @@ const Login = () => {
                     </p>
                 </section>
             ) : (
-                <section>
+                <section className="loginForm">
                     <p
                         ref={errRef}
                         className={errMsg ? "errmsg" : "offscreen"}
