@@ -94,7 +94,7 @@ const SignUp = () => {
         }
         try {
             const response = await axios.post(
-                "https://think-fast.onrender.com/register",
+                "http://localhost:3000/register",
                 JSON.stringify({ user, pwd }),
                 {
                     headers: { "Content-Type": "application/json" },
