@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { Player } from "@lottiefiles/react-lottie-player";
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import './quiz.css'
 
 const Quiz = () => {
@@ -35,11 +39,10 @@ const Quiz = () => {
 
   return (
     <>
-      <h1>Question 1</h1>
+      <h1 id='quiztitle'>Quiz 1</h1>
+      <h2 id='questiontitle'>Question 1</h2>
       <div className='container'>
-        <p>
-        Timer: {seconds}
-        </p>
+        <div id='qa_section'>
         <div className='ans'>
           <div>
             {answers.map((answer, index) => (
@@ -54,7 +57,20 @@ const Quiz = () => {
           </div>
         </div>
         <button id='submit-button'>Submit</button>
+        </div>
+        <div id='timersection'>
+        <p id='timer'>
+        Timer: {seconds}
+        </p>
+        <Player
+                id="timerlottie"
+                autoplay
+                loop={true}
+                src="https://lottie.host/06529719-8f17-4ea8-b07d-3e25376bce76/lyhJEsLaGx.json"></Player>
+        </div>
+       
       </div>
+      <Link to={`/`}> <FontAwesomeIcon icon={faCircleArrowLeft} id='backarrow'/> </Link> 
     </>
   );
 }
