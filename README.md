@@ -46,16 +46,20 @@ Deployment: Deployed the application using Netlify for the frontend and Render f
 
 ## Features
 1. User Signup and Login
+   
 Get started on your journey to academic success by creating your personal ThinkFast account. We've made it quick and easy for you to sign up, so you can jump right into your revision quizzes. With a secure login system, your progress and quiz history are always at your fingertips.
 
 2. Create Your Quiz
+   
 Tailor your revision experience to your unique needs with the "Create Quiz" feature. Whether you want to brush up on a specific subject, chapter, or concept, ThinkFast allows you to craft custom quizzes. Simply select the topics you want to review, set the difficulty level, and you're ready to roll.
 
 3. Timed Quizzes
+   
 We understand that time management is crucial when preparing for exams. ThinkFast's "Timed Quizzes" feature ensures you stay on track by setting the clock ticking. Challenge yourself to answer questions within a specified time frame, just like in a real exam. This feature is designed to boost your focus, speed, and recall abilities, making your revision sessions more productive.
 
-5. Secure Authentication
-Think Fast prioritizes user security. Our robust login and registration system ensures that only legitimate users have access to the platform. Your information is protected, and you can confidently engage with others in the community.
+4. Secure Authentication
+   
+Think Fast prioritises user security. Our robust login and registration system ensures that only legitimate users have access to the platform. Your information is protected, and you can confidently engage with others in the community.
 
 ## Wins and Challenges
 
