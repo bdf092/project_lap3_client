@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-const questions = ({ question, onSubmit }) => {
+const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
     const [clicked, setClicked] = useState(Array(4).fill(false)); 
     const [isAnsCorrect, setIsAnsCorrect] = useState(null)
+    const [seconds, setSeconds] = useState(60);
+    const [warning, setWarning] = useState(false)
+
+    const answers = question.answer_choices;
 
     const handleClick = (index) => {
        // Create a copy of the clicked array and toggle the clicked state for the clicked paragraph
@@ -21,31 +25,34 @@ const questions = ({ question, onSubmit }) => {
 
     const handleAnsSubmit = () => {
       onSubmit()
-    }
-    // const setQuestion = question.question
-  
-    const answers = question.answer_choices;
-  
-    const [seconds, setSeconds] = useState(60);
-  
+    }  
+    
     useEffect(() => {
-      if (seconds <= 0) return;
+      
+      if (seconds <= 0) {
+        onNextQuestion()
+        setClicked(Array(4).fill(false))
+        setIsAnsCorrect(null)
+        setWarning(false)
+      } else if (seconds <= 10) {
+        setWarning(true)
+      }
   
       const timerId = setInterval(() => {
         setSeconds((prevSeconds) => prevSeconds - 1);
       }, 1000);
   
       return () => clearInterval(timerId);
-    }, [seconds]);
+    }, [seconds, onNextQuestion]);
 
     const correctAns = (answer) => {
       if (answer === question.correct_answer) {
-        console.log(question)
-        console.log("correct")
+        // console.log(question)
+        // console.log("correct")
         setIsAnsCorrect(true)
       } else {
-        console.log("incorrect")
-        console.log(question)
+        // console.log("incorrect")
+        // console.log(question)
 
         setIsAnsCorrect(false)
       }
@@ -55,11 +62,16 @@ const questions = ({ question, onSubmit }) => {
       <>
         
         <div id='container'>
-          <h1></h1>
           <h2>{question.question}</h2>
-          <p>
-          Timer: {seconds}
+
+          {warning && (
+            <p>Time is almost up!</p>
+          )}
+
+          <p >
+          Timer: <span style={warning ? { fontWeight: 'bold'}: {}}>{seconds}</span>
           </p>
+          
           <div id='ans'>
             <div>
               {answers.map((answer, index) => (
@@ -70,7 +82,7 @@ const questions = ({ question, onSubmit }) => {
                   className={`individual-ans ${clicked[index] ? 'clicked' : ''}`}
                   onClick={() => {
                     handleClick(index)
-                    console.log(answer)
+                    // console.log(answer)
                     correctAns(answer)
                   }}
                   
