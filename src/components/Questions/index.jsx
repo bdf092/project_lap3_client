@@ -69,7 +69,7 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
                 <h2 id="questiontitle">{question.question}</h2>
                 <div className="container">
                     <div id="qa_section">
-                        {warning && <p>Time is almost up!</p>}
+                        {warning && <p id="timerwarning">Time is almost up!</p>}
 
                         <p>
                             Timer:{" "}
@@ -97,7 +97,8 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
                                 Submit
                             </button>
                         </div>
-                        <div id="timersection">
+                    </div>
+                    <div id="timersection">
                             <p id="timer">Timer: {seconds}</p>
                             <Player
                                 id="timerlottie"
@@ -105,12 +106,11 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
                                 loop={true}
                                 src="https://lottie.host/06529719-8f17-4ea8-b07d-3e25376bce76/lyhJEsLaGx.json"></Player>
                         </div>
-                    </div>
                 </div>
             </div>
             <Link to={`/`}>
                 {" "}
-                <FontAwesomeIcon icon={faCircleArrowLeft} id="backarrow" />{" "}
+                <FontAwesomeIcon icon={faCircleArrowLeft} id="backarrow2" />{" "}
             </Link>
         </>
     );

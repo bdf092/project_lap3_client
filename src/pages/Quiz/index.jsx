@@ -9,11 +9,9 @@ import './quiz.css'
 const Quiz = () => {
   const {id} = useParams();
   const [questions, setQuestions] = useState([])
-  const [answers, setAnswers] = useState([])
-  const [clicked, setClicked] = useState([])
-  const [seconds, setSeconds] = useState(10)
   const [quiz, setQuiz] = useState([])
   const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   useEffect(() => {
     async function displayQuestions() {
@@ -28,7 +26,10 @@ const Quiz = () => {
   }, [id])
 
   const handleAnsSubmit = () => {
-    setCurrentQuestion((prevIndex) => prevIndex + 1)
+    setCurrentQuestion((prevIndex) => prevIndex + 1);
+    if (currentQuestion === questions.length - 1) {
+      setQuizCompleted(true);
+    }
   }
 
   const onNextQuestion = () => {
@@ -47,10 +48,10 @@ const Quiz = () => {
           onSubmit={handleAnsSubmit}
         />
       ) : (
-        currentQuestion === questions.length && (
+        quizCompleted && ( 
         <>
           <h2 id='congrats'>Congratulations! You have completed the quiz.</h2>
-          <Link to={`/`}>  <button id='backtohomepage'>back to homepage</button></Link> 
+          <Link to={`/`}>  <button id='backtohomepage'>Back to homepage</button></Link>
         </>
       )
       )}

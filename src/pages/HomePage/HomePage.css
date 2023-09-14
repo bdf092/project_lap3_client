@@ -29,6 +29,12 @@
 
 }
 
+#createbutton:hover {
+	background: whitesmoke;
+	border: #095F84 3px solid;
+	color: #095F84;
+	transition: all 0.3s ease;
+}
 
 /* card carousel start */
 
@@ -161,7 +167,7 @@ h3#card-title {
     background-color: #b5bf63;
 	margin: 10px;
 	font-family: 'Quicksand', sans-serif;
-	font-weight: 600;
+	font-weight: bold;
 	color: #095F84;
 }
 
