@@ -1,12 +1,10 @@
-
-
 #navbar {
     display: flex;
     align-items: center;
     width: 100%;
     padding-top: 7px;
     height: 95px;
-    border-bottom: 1px solid #7d8c45AA;
+    border-bottom: 1px solid #7d8c45aa;
     background-color: #fcfcfc;
 }
 
@@ -19,12 +17,12 @@
     margin-left: 45vw;
     white-space: nowrap;
 }
-#navbar a, 
+#navbar a,
 #navbar a:visited {
     margin-left: 16px;
     text-decoration: none;
     padding: 6px;
-    color: #095F84;
+    color: #095f84;
 }
 #navbar a:hover {
     color: #7d8c45;
@@ -35,12 +33,9 @@
     color: #7d8c45;
 }
 
-
-
 img {
     max-width: 15rem;
 }
-
 
 #footer {
     position: absolute;
@@ -51,6 +46,6 @@ img {
     background: #7d8c45;
     text-align: center;
     font-weight: bold;
-    justify-content:center;
+    justify-content: center;
     padding: 10px 0px 6px 0px;
 }
