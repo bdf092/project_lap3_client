@@ -44,7 +44,7 @@ const Scoreboard = () => {
     } = useTable({ columns, data });
 
     return (
-        <div>
+        <div id="sb-container">
         <table {...getTableProps()}>
             <thead>
             {headerGroups.map((headerGroup) => (
