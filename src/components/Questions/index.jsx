@@ -71,13 +71,13 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
           <h2 id='questiontitle'>{question.question}</h2>
           <div className='container'>
             <div id='qa_section'>
-              {warning && (
+              {/* {warning && (
                 <p>Time is almost up!</p>
-              )}
+              )} */}
 
-              <p>
+              {/* <p>
                 Timer: <span style={warning ? { fontWeight: 'bold'}: {}}>{seconds}</span>
-              </p>
+              </p> */}
             
               <div id='ans'>
                 <div>
@@ -99,8 +99,11 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
                 <button id='submit-button' onClick={handleAnsSubmit}>Submit</button>
               </div>
             <div id='timersection'>
+              {warning && (
+                <p id='timer'>Time is almost up!</p>
+              )}
               <p id='timer'>
-              Timer: {seconds}
+              Timer: <span style={warning ? { fontWeight: 'bold'}: {}}>{seconds}</span>
               </p>
               <Player
                       id="timerlottie"
@@ -115,5 +118,4 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
       </>
     );
 }
-
 export default questions
