@@ -36,29 +36,26 @@ Project Planning: Reading the project brief and discussing ideas.
 
 UI/UX Design: Played CrazyEights to sketch out quick ideas for app visuals. Created lo-fi wireframes with Figma to further visualize the application's layout and user interface.
 
-Backend Development: Implemented the server using Node.js and Express.js to handle user requests and interact with the APIs. Created databases using MongoDB to hold quiz and user data.  (something about Docker)
+Backend Development: Implemented the server using Node.js and Express.js to handle user requests and interact with the APIs. Created databases using MongoDB to hold quiz and user data. Used Docker to containerise the app.
 
 Frontend Development: Developed the user interface using HTML, CSS and Javascript and integrated with the backend APIs.
 
 Testing: Performed unit testing with Vitest and Jest to identify and fix issues.
 
-Deployment: Deployed the application to a web server (Render).
+Deployment: Deployed the application using Netlify for the frontend and Render for the backend.
 
 ## Features
-1. Item Listings
-Easily create and browse posts for items you want to give away. Users can provide detailed descriptions and upload images of the items. Each item listing displays relevant information, making it simple for others to find items they're interested in.
+1. User Signup and Login
+Get started on your journey to academic success by creating your personal ThinkFast account. We've made it quick and easy for you to sign up, so you can jump right into your revision quizzes. With a secure login system, your progress and quiz history are always at your fingertips.
 
-2. Comment
-Trash to Treasure encourages interaction among users through the comment system. Users can leave comments on item listings to ask questions, express interest, or share their thoughts.
+2. Create Your Quiz
+Tailor your revision experience to your unique needs with the "Create Quiz" feature. Whether you want to brush up on a specific subject, chapter, or concept, ThinkFast allows you to craft custom quizzes. Simply select the topics you want to review, set the difficulty level, and you're ready to roll.
 
-3. Contact and Arrangement
-When users find an item they want, they can easily reach out to the item owner by clicking the "Contact Owner" button. Whether it's arranging a pickup time or discussing delivery options, the platform makes communication convenient and efficient. This feature ensures that item exchanges are smooth and hassle-free.
+3. Timed Quizzes
+We understand that time management is crucial when preparing for exams. ThinkFast's "Timed Quizzes" feature ensures you stay on track by setting the clock ticking. Challenge yourself to answer questions within a specified time frame, just like in a real exam. This feature is designed to boost your focus, speed, and recall abilities, making your revision sessions more productive.
 
-4. Secure Authentication
-Trash to Treasure prioritizes user security. Our robust login and registration system ensures that only legitimate users have access to the platform. Your information is protected, and you can confidently engage with others in the community.
-
-5. Mobile Responsive
-Access Trash to Treasure from various devices, including smartphones and tablets. The web app is designed to provide a seamless experience, regardless of the device you're using, so you can engage with the platform anytime, anywhere.
+5. Secure Authentication
+Think Fast prioritizes user security. Our robust login and registration system ensures that only legitimate users have access to the platform. Your information is protected, and you can confidently engage with others in the community.
 
 ## Wins and Challenges
 
