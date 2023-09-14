@@ -109,7 +109,7 @@ const SignUp = () => {
                         {errMsg}
                     </p>
                     <h1>Register</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} role="form">
                         <label htmlFor="username">
                             Username:
                             <span id="userNameCheck" className={validName ? "valid" : "hide"}>
