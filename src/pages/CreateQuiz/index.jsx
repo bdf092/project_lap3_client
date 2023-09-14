@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { CreateQuizForm } from "../../components";
 import { Player } from "@lottiefiles/react-lottie-player";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import "./CreateQuiz.css";
 

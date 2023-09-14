@@ -8,7 +8,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./signUp.css";
-import axios from "axios";
 /* import { SlowBuffer } from "buffer"; */
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -85,30 +84,37 @@ const SignUp = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        // TODO: Connect to DB and add error messages
-        console.log(user, pwd);
+
+        const v1 = USER_REGEX.test(user);
+        const v2 = PWD_REGEX.test(pwd);
+        if (!v1 || !v2) {
+            setErrMsg("Invalid Entry");
+            return;
+        }
         try {
-            const response = await axios.post("https://think-fast.onrender.com/register", 
-            JSON.stringify({ user, pwd}),
-            {
-                headers: { 'Content-Type': 'application/json'},
-                wirthCredentials: true
+            const response = await axios.post(REGISTER_URL, JSON.stringify({ user, pwd }), {
+                headers: { "Content-Type": "application/json" },
+                withCredentials: true,
             });
-            console.log(response.data);
-            console.log(response.accessToken);
+            console.log(response?.data);
+            console.log(response?.accessToken);
+            console.log(JSON.stringify(response));
             setSuccess(true);
-            // clear input fields here
+            //clear state and controlled inputs
+            //need value attrib on inputs for this
+            setUser("");
+            setPwd("");
+            setMatchPwd("");
         } catch (err) {
             if (!err?.response) {
-                setErrMsg("No server response");
+                setErrMsg("No Server Response");
             } else if (err.response?.status === 409) {
-                setErrMsg("Username taken");
+                setErrMsg("Username Taken");
             } else {
-                setErrMsg("Registration failed");
+                setErrMsg("Registration Failed");
             }
-            //focus on error for screen readers
-            errRef.current.focus()
-        }  
+            errRef.current.focus();
+        }
     };
 
     return (
@@ -131,7 +137,7 @@ const SignUp = () => {
                         {errMsg}
                     </p>
                     <h1>Register</h1>
-                    <form onSubmit={handleSubmit} role="form">
+                    <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
                             <span id="userNameCheck" className={validName ? "valid" : "hide"}>
