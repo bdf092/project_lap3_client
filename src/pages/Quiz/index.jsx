@@ -6,6 +6,7 @@ import './quiz.css'
 const Quiz = () => {
   const {id} = useParams();
   const [questions, setQuestions] = useState([])
+  const [quiz, setQuiz] = useState([])
   const [currentQuestion, setCurrentQuestion] = useState(0)
 
   useEffect(() => {
@@ -14,7 +15,8 @@ const Quiz = () => {
     const rawData = await response.json();
     const fetchedQuestions = rawData.questions || []
     setQuestions(fetchedQuestions)
-    // console.log(rawData.questions[currentQuestion])
+    setQuiz(rawData.title)
+    console.log(rawData.title)
     }
     displayQuestions()
   }, [id])
@@ -25,6 +27,7 @@ const Quiz = () => {
 
   return (
     <>
+    <h1>{quiz}</h1>
       {currentQuestion < questions.length ? (
         <Questions key={questions[currentQuestion]._id} question={questions[currentQuestion]} onSubmit={handleAnsSubmit}/>
       ) : (
