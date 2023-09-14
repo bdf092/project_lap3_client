@@ -5,10 +5,13 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
 import "../../pages/Quiz/quiz.css";
 
-const questions = ({ question, onSubmit }) => {
+const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
     const [clicked, setClicked] = useState(Array(4).fill(false));
     const [isAnsCorrect, setIsAnsCorrect] = useState(null);
-    const [score, setScore] = useState(0);
+    const [seconds, setSeconds] = useState(60);
+    const [warning, setWarning] = useState(false);
+
+    const answers = question.answer_choices;
 
     const handleClick = index => {
         // Create a copy of the clicked array and toggle the clicked state for the clicked paragraph
@@ -28,31 +31,33 @@ const questions = ({ question, onSubmit }) => {
     const handleAnsSubmit = () => {
         onSubmit();
     };
-    // const setQuestion = question.question
-
-    const answers = question.answer_choices;
-
-    const [seconds, setSeconds] = useState(60);
 
     useEffect(() => {
-        if (seconds <= 0) return;
+        if (seconds <= 0) {
+            onNextQuestion();
+            setClicked(Array(4).fill(false));
+            setIsAnsCorrect(null);
+            setWarning(false);
+        } else if (seconds <= 10) {
+            setWarning(true);
+            // console.log('time almost up')
+        }
 
         const timerId = setInterval(() => {
             setSeconds(prevSeconds => prevSeconds - 1);
         }, 1000);
 
         return () => clearInterval(timerId);
-    }, [seconds]);
+    }, [seconds, onNextQuestion]);
 
     const correctAns = answer => {
         if (answer === question.correct_answer) {
-            console.log(question);
-            console.log("correct");
+            // console.log(question)
+            // console.log("correct")
             setIsAnsCorrect(true);
-            setScore(score + 1);
         } else {
-            console.log("incorrect");
-            console.log(question);
+            // console.log("incorrect")
+            // console.log(question)
 
             setIsAnsCorrect(false);
         }
@@ -61,11 +66,16 @@ const questions = ({ question, onSubmit }) => {
     return (
         <>
             <div id="container">
-                <h1></h1>
                 <h2 id="questiontitle">{question.question}</h2>
                 <div className="container">
                     <div id="qa_section">
-                        <p>Timer: {seconds}</p>
+                        {warning && <p>Time is almost up!</p>}
+
+                        <p>
+                            Timer:{" "}
+                            <span style={warning ? { fontWeight: "bold" } : {}}>{seconds}</span>
+                        </p>
+
                         <div id="ans">
                             <div>
                                 {answers.map((answer, index) => (
@@ -76,14 +86,13 @@ const questions = ({ question, onSubmit }) => {
                                         }`}
                                         onClick={() => {
                                             handleClick(index);
-                                            console.log(answer);
+                                            // console.log(answer)
                                             correctAns(answer);
                                         }}>
                                         {answer}
                                     </p>
                                 ))}
                             </div>
-                            <h3>{score}</h3>
                             <button id="submit-button" onClick={handleAnsSubmit}>
                                 Submit
                             </button>

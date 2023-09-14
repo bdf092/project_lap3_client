@@ -35,27 +35,7 @@
     transform: translate(-50%, -50%);
     width: 80%;
     height: 50vh;
-    /* background-color: red; */
 }
-
-/* .ans {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* background-color: purple; */
-    /* height: 60vh; */
-/* } */
-
-/* .ans p {
-    
-    background-color: red;
-    border: solid 1px black;
-    padding: 30px 50px;
-    width: 20vw;
-    margin: 30px 20px;
-} */
-
 
 
 .individual-ans.clicked {
@@ -114,8 +94,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: end;
-    /* background-color: purple; */
-    /* height: 60vh; */
 }
 
 #ans p {
@@ -133,14 +111,6 @@
 
 
 @media only screen and (max-width:1400px) {
-    /* #ans {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: purple; */
-        /* height: 60vh;
-    } */
     #ans div {
         display: flex;
         flex-direction: column;

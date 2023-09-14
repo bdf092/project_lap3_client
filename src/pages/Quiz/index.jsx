@@ -21,7 +21,7 @@ const Quiz = () => {
     const fetchedQuestions = rawData.questions || []
     setQuestions(fetchedQuestions)
     setQuiz(rawData.title)
-    console.log(rawData.title)
+    // console.log(rawData.title)
     }
     displayQuestions()
   }, [id])
@@ -30,12 +30,21 @@ const Quiz = () => {
     setCurrentQuestion((prevIndex) => prevIndex + 1)
   }
 
+  const onNextQuestion = () => {
+    setCurrentQuestion((prevIndex) => prevIndex + 1)
+  }
+
   return (
     <>
       <h1 id='quiztitle'>{quiz}</h1>
         
       {currentQuestion < questions.length ? (
-        <Questions key={questions[currentQuestion]._id} question={questions[currentQuestion]} onSubmit={handleAnsSubmit}/>
+        <Questions 
+          onNextQuestion={onNextQuestion}
+          key={questions[currentQuestion]._id} 
+          question={questions[currentQuestion]} 
+          onSubmit={handleAnsSubmit}
+        />
       ) : (
         currentQuestion === questions.length && (
         <>
