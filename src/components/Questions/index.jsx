@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Player } from "@lottiefiles/react-lottie-player";
+import { Link } from "react-router-dom";
+import '../../pages/Quiz/quiz.css'
 
 const questions = ({ question, onSubmit }) => {
     const [clicked, setClicked] = useState(Array(4).fill(false)); 
@@ -56,7 +61,9 @@ const questions = ({ question, onSubmit }) => {
         
         <div id='container'>
           <h1></h1>
-          <h2>{question.question}</h2>
+          <h2 id='questiontitle'>{question.question}</h2>
+          <div className='container'>
+          <div id='qa_section'>
           <p>
           Timer: {seconds}
           </p>
@@ -79,9 +86,22 @@ const questions = ({ question, onSubmit }) => {
                 </p>
               ))}
             </div>
+            <button id='submit-button' onClick={handleAnsSubmit}>Submit</button>
           </div>
-          <button id='submit-button' onClick={handleAnsSubmit}>Submit</button>
+          <div id='timersection'>
+        <p id='timer'>
+        Timer: {seconds}
+        </p>
+        <Player
+                id="timerlottie"
+                autoplay
+                loop={true}
+                src="https://lottie.host/06529719-8f17-4ea8-b07d-3e25376bce76/lyhJEsLaGx.json"></Player>
         </div>
+          </div>
+          </div>
+        </div>
+        <Link to={`/`}> <FontAwesomeIcon icon={faCircleArrowLeft} id='backarrow'/> </Link> 
       </>
     );
 }
