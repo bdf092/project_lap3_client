@@ -14,7 +14,7 @@
     justify-content: flex-end;
     align-content: center;
     font-weight: 600;
-    margin-left: 45vw;
+    margin-left: 60%;
     white-space: nowrap;
 }
 #navbar a,
@@ -33,10 +33,15 @@
     color: #7d8c45;
 }
 
-
-
 #logo {
     max-width: 15rem;
+}
+
+#navbar #login {
+    background: #8bbbd9;
+    border-width: thick;
+    border-color: #7d8c45;
+    border-radius: 10px;
 }
 
 #footer {
