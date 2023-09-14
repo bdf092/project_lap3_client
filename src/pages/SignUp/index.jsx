@@ -94,16 +94,16 @@ const SignUp = () => {
         }
         try {
             const response = await axios.post(
-                "http://localhost:3000/register",
+                "https://think-fast.onrender.com/register",
                 JSON.stringify({ user, pwd }),
                 {
                     headers: { "Content-Type": "application/json" },
                     withCredentials: true,
                 }
             );
-            console.log(response?.data);
-            console.log(response?.accessToken);
-            console.log(JSON.stringify(response));
+
+            console.log(JSON.stringify(response?.data));
+
             setSuccess(true);
             //clear state and controlled inputs
             //need value attrib on inputs for this

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthProvider";
+import axios from "axios";
 import "./login.css";
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                "https://http://localhost:3000/auth",
+                "https://think-fast.onrender.com/auth",
                 JSON.stringify({ user, pwd }),
                 {
                     headers: { "Content-Type": "application/json" },
