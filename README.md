@@ -7,6 +7,21 @@ ThinkFast enables students to enjoy educational multiple-choice quizzes to aid w
 ### Installation & Usage
 To run the application locally, follow these steps:
 
+1. Copy the SSH key on the GitHub Repo.
+2. Open your terminal and navigate to the desired directory using the command `cd <write file path here>`.
+3. Run the command `git clone <Paste SSH key here>`.
+6. Run the command `npm install` to install the required dependencies.
+7. Run the command `code .` in the terminal to open the project in VSCode.
+8. Go to Mongo Atlas website and create a cluster and respective database. Make sure to copy the SRV connection string as you will need it later. 
+9. In the project_lap3_server folder create a file called `.env`.
+10. In this file paste the following:
+`PORT=3000
+ BCRYPT_SALT_ROUNDS=12
+ DB_URI=<Paste the SRV connection string from Mongo Altas> 
+ TEST_DB_URI = <Repeat the process of making a new database if you need to do testing>`
+11. Run the commands `cd project_lap3_server` & `npm run dev` in the terminal.
+12. Run the command  `cd project_lap3_client` & `npm run dev` in the terminal.
+13. Open the project accessing: `http://localhost:5173/.
 
 
 ## Tech Stack
