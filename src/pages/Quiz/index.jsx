@@ -8,9 +8,6 @@ import "./quiz.css";
 const Quiz = () => {
     const { id } = useParams();
     const [questions, setQuestions] = useState([]);
-    const [answers, setAnswers] = useState([]);
-    const [clicked, setClicked] = useState([]);
-    const [seconds, setSeconds] = useState(10);
     const [quiz, setQuiz] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
@@ -31,8 +28,39 @@ const Quiz = () => {
 
     return (
         <>
-            <h1 id="quiztitle">{quiz}</h1>
+            <h1 id="quiztitle">Quiz 1</h1>
+            <h2 id="questiontitle">Question 1</h2>
+            <div className="container">
+                <div id="qa_section">
+                    <div className="ans">
+                        <div>
+                            {answers.map((answer, index) => (
+                                <p
+                                    key={index}
+                                    className={`individual-ans ${clicked[index] ? "clicked" : ""}`}
+                                    onClick={() => handleClick(index)}>
+                                    {answer}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                    <button id="submit-button">Submit</button>
+                </div>
+                <div id="timersection">
+                    <p id="timer">Timer: {seconds}</p>
+                    <Player
+                        id="timerlottie"
+                        autoplay
+                        loop={true}
+                        src="https://lottie.host/06529719-8f17-4ea8-b07d-3e25376bce76/lyhJEsLaGx.json"></Player>
+                </div>
+            </div>
+            <Link to={`/`}>
+                {" "}
+                <FontAwesomeIcon icon={faCircleArrowLeft} id="backarrow" />{" "}
+            </Link>
 
+            <h1>{quiz}</h1>
             {currentQuestion < questions.length ? (
                 <Questions
                     key={questions[currentQuestion]._id}
