@@ -46,11 +46,12 @@
 	max-width: 100%;
 	margin: auto;
 }
+
 #card-container {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
-	margin-left: 75px;
+	margin-left: 100px;
 	min-width: 230px;
 	max-width: 308px;
 	width: 100%;
@@ -173,27 +174,27 @@ h3#card-title {
 
   .slick-next,
 .slick-prev {
-	top: 108.5%;
+	top: 110%;
+	
 }
 .slick-next {
 	right: 0;
-	text-align: center;
-	font-size: large;
-	width: 50%
+	text-align: left;
+	width: 49.3%;
 }
 .slick-prev {
 	left: 0;
-	text-align: center;
-	font-size: large;
-	width: 50%;
+	text-align: right;
+	
+	width: 49.3%;
 }
 .slick-prev:before,
 .slick-next:before {
 	font-family: "Font Awesome\ 5 Free";
-	font-size: 50px;
+	font-size: 100px;
 	color: #7d8c45;
 	line-height: 1;
-	font-weight: 900;
+	font-weight: bolder;
 } 
 /* card carousel end */
 
@@ -207,3 +208,4 @@ h3#card-title {
 		margin: 0 auto;
 	}
 }
+

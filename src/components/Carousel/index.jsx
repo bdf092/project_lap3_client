@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import QuizCard from '../QuizCard';
        
@@ -7,7 +6,7 @@ const Carousel = () => {
   
   const [quizzes, setQuizzes] = useState([]);
    
-    const { id } = useParams();
+  
 
     useEffect(() => {
         async function loadQuizzes() {
