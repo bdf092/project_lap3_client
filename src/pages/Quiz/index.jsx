@@ -1,41 +1,34 @@
 import React, { useState, useEffect } from 'react'
+
 import { Player } from "@lottiefiles/react-lottie-player";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { Questions } from '../../components';
+
 import './quiz.css'
 
 const Quiz = () => {
-  const [clicked, setClicked] = useState(Array(4).fill(false)); 
-
-  const handleClick = (index) => {
-     // Create a copy of the clicked array and toggle the clicked state for the clicked paragraph
-     const updatedClicked = [...clicked];
-     updatedClicked[index] = !updatedClicked[index];
- 
-     // Reset the clicked state for all other paragraphs
-     for (let i = 0; i < updatedClicked.length; i++) {
-       if (i !== index) {
-         updatedClicked[i] = false;
-       }
-     }
- 
-     setClicked(updatedClicked);
-  };
-
-  const answers = ["answer 1", "answer 2", "answer 3", "answer 4"];
-
-  const [seconds, setSeconds] = useState(60);
+  const {id} = useParams();
+  const [questions, setQuestions] = useState([])
+  const [quiz, setQuiz] = useState([])
+  const [currentQuestion, setCurrentQuestion] = useState(0)
 
   useEffect(() => {
-    if (seconds <= 0) return;
+    async function displayQuestions() {
+    const response = await fetch(`https://think-fast.onrender.com/quizzes/${id}`)
+    const rawData = await response.json();
+    const fetchedQuestions = rawData.questions || []
+    setQuestions(fetchedQuestions)
+    setQuiz(rawData.title)
+    console.log(rawData.title)
+    }
+    displayQuestions()
+  }, [id])
 
-    const timerId = setInterval(() => {
-      setSeconds((prevSeconds) => prevSeconds - 1);
-    }, 1000);
-
-    return () => clearInterval(timerId);
-  }, [seconds]);
+  const handleAnsSubmit = () => {
+    setCurrentQuestion((prevIndex) => prevIndex + 1)
+  }
 
   return (
     <>
@@ -71,6 +64,19 @@ const Quiz = () => {
        
       </div>
       <Link to={`/`}> <FontAwesomeIcon icon={faCircleArrowLeft} id='backarrow'/> </Link> 
+      
+    <h1>{quiz}</h1>
+      {currentQuestion < questions.length ? (
+        <Questions key={questions[currentQuestion]._id} question={questions[currentQuestion]} onSubmit={handleAnsSubmit}/>
+      ) : (
+        currentQuestion === questions.length && (
+        <>
+          <h2>Congratulations! You have completed the quiz.</h2>
+          <button>back to homepage</button>
+        </>
+      )
+      )}
+      
     </>
   );
 }

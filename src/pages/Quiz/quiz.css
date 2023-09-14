@@ -62,7 +62,7 @@
     background-color: #b5bf63;
 }
 
-.ans p:hover{
+#ans p:hover{
     cursor: pointer;
     background-color: #b5bf63;
 }
@@ -109,7 +109,7 @@
 /* media queries start */
 
 @media only screen and (min-width: 1401px) {
-    .ans {
+    #ans {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -118,7 +118,7 @@
     /* height: 60vh; */
 }
 
-.ans p {
+#ans p {
     
     /* background-color: red; */
     border: solid 1px #095f84;
@@ -133,7 +133,7 @@
 
 
 @media only screen and (max-width:1400px) {
-    /* .ans {
+    /* #ans {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -141,13 +141,13 @@
         background-color: purple; */
         /* height: 60vh;
     } */
-    .ans div {
+    #ans div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .ans p {
+    #ans p {
         
         /* background-color: red; */
         border: solid 1px #095f84;
@@ -182,4 +182,6 @@
 /* media queries end */
 
 
-
+#container {
+    margin-bottom: 50px;
+}
