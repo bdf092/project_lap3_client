@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./signUp.css";
+import axios from "axios";
 /* import { SlowBuffer } from "buffer"; */
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -86,7 +87,28 @@ const SignUp = () => {
         e.preventDefault();
         // TODO: Connect to DB and add error messages
         console.log(user, pwd);
-        setSuccess(true);
+        try {
+            const response = await axios.post("https://think-fast.onrender.com/register", 
+            JSON.stringify({ user, pwd}),
+            {
+                headers: { 'Content-Type': 'application/json'},
+                wirthCredentials: true
+            });
+            console.log(response.data);
+            console.log(response.accessToken);
+            setSuccess(true);
+            // clear input fields here
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg("No server response");
+            } else if (err.response?.status === 409) {
+                setErrMsg("Username taken");
+            } else {
+                setErrMsg("Registration failed");
+            }
+            //focus on error for screen readers
+            errRef.current.focus()
+        }  
     };
 
     return (
