@@ -1,60 +1,41 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { Questions } from '../../components';
 import './quiz.css'
 
 const Quiz = () => {
-  const [clicked, setClicked] = useState(Array(4).fill(false)); 
-
-  const handleClick = (index) => {
-     // Create a copy of the clicked array and toggle the clicked state for the clicked paragraph
-     const updatedClicked = [...clicked];
-     updatedClicked[index] = !updatedClicked[index];
- 
-     // Reset the clicked state for all other paragraphs
-     for (let i = 0; i < updatedClicked.length; i++) {
-       if (i !== index) {
-         updatedClicked[i] = false;
-       }
-     }
- 
-     setClicked(updatedClicked);
-  };
-
-  const answers = ["answer 1", "answer 2", "answer 3", "answer 4"];
-
-  const [seconds, setSeconds] = useState(60);
+  const {id} = useParams();
+  const [questions, setQuestions] = useState([])
+  const [currentQuestion, setCurrentQuestion] = useState(0)
 
   useEffect(() => {
-    if (seconds <= 0) return;
+    async function displayQuestions() {
+    const response = await fetch(`https://think-fast.onrender.com/quizzes/${id}`)
+    const rawData = await response.json();
+    const fetchedQuestions = rawData.questions || []
+    setQuestions(fetchedQuestions)
+    // console.log(rawData.questions[currentQuestion])
+    }
+    displayQuestions()
+  }, [id])
 
-    const timerId = setInterval(() => {
-      setSeconds((prevSeconds) => prevSeconds - 1);
-    }, 1000);
-
-    return () => clearInterval(timerId);
-  }, [seconds]);
+  const handleAnsSubmit = () => {
+    setCurrentQuestion((prevIndex) => prevIndex + 1)
+  }
 
   return (
     <>
-      <h1>Question 1</h1>
-      <div className='container'>
-        <p>
-        Timer: {seconds}
-        </p>
-        <div className='ans'>
-          <div>
-            {answers.map((answer, index) => (
-              <p
-                key={index}
-                className={`individual-ans ${clicked[index] ? 'clicked' : ''}`}
-                onClick={() => handleClick(index)}
-              >
-                {answer}
-              </p>
-            ))}
-          </div>
-        </div>
-        <button id='submit-button'>Submit</button>
-      </div>
+      {currentQuestion < questions.length ? (
+        <Questions key={questions[currentQuestion]._id} question={questions[currentQuestion]} onSubmit={handleAnsSubmit}/>
+      ) : (
+        currentQuestion === questions.length && (
+        <>
+          <h2>Congratulations! You have completed the quiz.</h2>
+          <button>back to homepage</button>
+        </>
+      )
+      )}
+      
     </>
   );
 }
