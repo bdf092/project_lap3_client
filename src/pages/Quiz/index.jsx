@@ -27,15 +27,6 @@ const Quiz = () => {
   }, [id])
 
   
-    const updateQuizzesPlayed = async (userId) => {
-      try {
-        console.log(localStorage)
-        const response = await axios.patch(`http://localhost:3000/users/${userId}`);
-      } catch (error) {
-        console.error('Error updating quizzesPlayed:', error);
-      }
-    };
-  
 
   useEffect(() => {
     const getUserId = async (userId) => {
@@ -67,7 +58,6 @@ const Quiz = () => {
     setCurrentQuestion((prevIndex) => prevIndex + 1);
     if (currentQuestion === questions.length - 1) {
       setQuizCompleted(true);
-      updateQuizzesPlayed(); 
       //
       const allCookies = getAllCookies();
       console.log('All cookies:', allCookies);
@@ -100,7 +90,7 @@ const Quiz = () => {
         quizCompleted && ( 
         <>
           <h2 id='congrats'>Congratulations! You have completed the quiz.</h2>
-          <h4 id="score-display"> Total Score: {score}</h4>
+          <h4 id="score-display"> Total Score: {score}/{questions.length}</h4>
           <Link to={`/`}>  <button id='backtohomepage'>Back to homepage</button></Link>
         </>
       )
