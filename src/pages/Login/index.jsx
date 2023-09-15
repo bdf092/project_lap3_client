@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthProvider";
 import axios from "axios";
-import lottie from "lottie-web";
+
 import "./login.css";
 
 const Login = () => {
@@ -15,16 +15,6 @@ const Login = () => {
     const [pwd, setPwd] = useState("");
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
-
-    useEffect(() => {
-        lottie.loadAnimation({
-            container: container.current,
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            path: "../../../public/images/login.json",
-        });
-    }, []);
 
     useEffect(() => {
         userRef.current.focus();
