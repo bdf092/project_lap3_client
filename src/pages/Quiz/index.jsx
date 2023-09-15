@@ -12,6 +12,7 @@ const Quiz = () => {
   const [quiz, setQuiz] = useState([])
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [quizCompleted, setQuizCompleted] = useState(false);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     async function displayQuestions() {
@@ -25,7 +26,11 @@ const Quiz = () => {
     displayQuestions()
   }, [id])
 
-  const handleAnsSubmit = () => {
+  const handleAnsSubmit = (isCorrect) => {
+    if (isCorrect) {
+      setScore((prevScore) => prevScore + 1);
+    }
+
     setCurrentQuestion((prevIndex) => prevIndex + 1);
     if (currentQuestion === questions.length - 1) {
       setQuizCompleted(true);
@@ -35,6 +40,12 @@ const Quiz = () => {
   const onNextQuestion = () => {
     setCurrentQuestion((prevIndex) => prevIndex + 1)
   }
+
+  const updateScore = (isCorrect) => {
+    if (isCorrect) {
+      setScore((prevScore) => prevScore + 1);
+    }
+  };
 
   return (
     <>
@@ -46,11 +57,13 @@ const Quiz = () => {
           key={questions[currentQuestion]._id} 
           question={questions[currentQuestion]} 
           onSubmit={handleAnsSubmit}
+          updateScore={updateScore}
         />
       ) : (
         quizCompleted && ( 
         <>
           <h2 id='congrats'>Congratulations! You have completed the quiz.</h2>
+          <h4 id="score-display"> Total Score: {score}</h4>
           <Link to={`/`}>  <button id='backtohomepage'>Back to homepage</button></Link>
         </>
       )

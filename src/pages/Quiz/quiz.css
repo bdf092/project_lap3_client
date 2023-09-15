@@ -101,8 +101,8 @@
 
 #congrats{
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 50vw;
     transform: translate(-50%, -50%);
     font-size: 40px;
     font-family: 'Quicksand', sans-serif;
@@ -223,4 +223,15 @@
 
 #container {
     margin-bottom: 50px;
+}
+
+#score-display {
+    position: absolute;
+    top: 60%;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #095f84;
 }
