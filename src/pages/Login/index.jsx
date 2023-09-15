@@ -2,17 +2,29 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthProvider";
 import axios from "axios";
+import lottie from "lottie-web";
 import "./login.css";
 
 const Login = () => {
     const { setAuth } = useAuth();
     const userRef = useRef();
     const errRef = useRef();
+    const container = useRef(null);
 
     const [user, setUser] = useState("");
     const [pwd, setPwd] = useState("");
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
+
+    useEffect(() => {
+        lottie.loadAnimation({
+            container: container.current,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "../../../public/images/login.json",
+        });
+    }, []);
 
     useEffect(() => {
         userRef.current.focus();
@@ -106,6 +118,7 @@ const Login = () => {
                     </p>
                 </section>
             )}
+            <div id="container" ref={container}></div>
         </>
     );
 };
