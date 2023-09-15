@@ -19,7 +19,7 @@ const QuizCard = ({ data }) => {
           /> */}
           <div id="card-title-container">
             <h3 id="card-title">{data.title}</h3>
-            <img className='bio-img' src="/images/biology-quiz.png" alt="biology image" />
+            <img id='bio-img' src="/images/biology-quiz.png" alt="biology image" />
             {/* <p className="card-sub-title">{subTitle}</p> */}
           </div>
         </div>
@@ -27,7 +27,12 @@ const QuizCard = ({ data }) => {
           {/* <p className="card-text">{text}</p> */}
         </div>
         <div>
-          <Link to={'/quiz'} id='bottom'><button>Start Quiz</button></Link>
+          <Link 
+            to={`${data._id}`}
+            key={data._id}
+            id='bottom'
+          >
+            <button>Start Quiz</button></Link>
         </div>
       </div>
       {/* <a href={link} target="_blank" />

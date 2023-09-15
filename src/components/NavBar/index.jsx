@@ -7,24 +7,18 @@ const NavBar = () => {
         <>
             <nav id="navbar">
                 <div id="logo">
-                    <img src="../../../images/logo.png" alt="Think Fast Logo" />
+                    <img src="../../../images/logo.png" alt="Think Fast Logo" id="logo" />
                 </div>
 
                 <div id="links">
                     <NavLink to="/" role="link">
                         Quizzes
                     </NavLink>
-                    <NavLink to="/profile" role="link">
-                        Profile
-                    </NavLink>
                     <NavLink to="/scoreboard" role="link">
                         Score Board
                     </NavLink>
-                    <NavLink to="/login" role="link">
+                    <NavLink id="login" to="/login" role="link">
                         Log In
-                    </NavLink>
-                    <NavLink to="/signup" role="link">
-                        Sign Up
                     </NavLink>
                 </div>
             </nav>
