@@ -1,3 +1,98 @@
 /*
-css will go here... soon
+
+#sb-container {
+    background-color: rgb(208, 164, 164);
+    color: black;
+    padding: 20px;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    
+#top3 {
+    
+    height: 300px;
+    width: 80%; 
+    margin-bottom: 20px; 
+    display: flex;
+    justify-content: space-between; 
+}
+
+#allTableContent {
+    background-color: antiquewhite;
+    width: 60%; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+
+.card {
+    flex: 1;
+}
+
+table {
+    width: 100%; 
+}
+
 */
+
+
+#sb-container {
+    color: black;
+    padding: 20px;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+#top3 {
+    height: 300px;
+    width: 80%; 
+    margin-bottom: 20px; 
+    display: flex;
+    justify-content: space-between; 
+}
+
+#allTableContent {
+    background-color: antiquewhite;
+    width: 60%; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+
+thead th {
+    background-color: #333; 
+    color: white; 
+    padding: 10px; 
+    text-align: center; 
+}
+
+tbody tr {
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px; 
+}
+
+tbody td {
+    padding: 10px; 
+    text-align: center; 
+}
+
+tbody tr:first-child {
+    background-color: #f0f0f0; 
+}
+

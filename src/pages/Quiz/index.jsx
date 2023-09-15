@@ -9,11 +9,10 @@ import './quiz.css'
 const Quiz = () => {
   const {id} = useParams();
   const [questions, setQuestions] = useState([])
-  const [answers, setAnswers] = useState([])
-  const [clicked, setClicked] = useState([])
-  const [seconds, setSeconds] = useState(10)
   const [quiz, setQuiz] = useState([])
   const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     async function displayQuestions() {
@@ -27,13 +26,53 @@ const Quiz = () => {
     displayQuestions()
   }, [id])
 
-  const handleAnsSubmit = () => {
-    setCurrentQuestion((prevIndex) => prevIndex + 1)
+  
+
+  useEffect(() => {
+    const getUserId = async (userId) => {
+      try {
+        console.log(localStorage)
+      } catch (error) {
+        console.error('Error getting userId:', error);
+      }
+    };
+  })
+
+  function getAllCookies() {
+    const cookies = document.cookie.split(';');
+    const cookieObject = {};
+  
+    for (const cookie of cookies) {
+      const [name, value] = cookie.trim().split('=');
+      cookieObject[name] = decodeURIComponent(value);
+    }
+  
+    return cookieObject;
+  }
+
+  const handleAnsSubmit = (isCorrect) => {
+    if (isCorrect) {
+      setScore((prevScore) => prevScore + 1);
+    }
+
+    setCurrentQuestion((prevIndex) => prevIndex + 1);
+    if (currentQuestion === questions.length - 1) {
+      setQuizCompleted(true);
+      //
+      const allCookies = getAllCookies();
+      console.log('All cookies:', allCookies);
+    }
   }
 
   const onNextQuestion = () => {
     setCurrentQuestion((prevIndex) => prevIndex + 1)
   }
+
+  const updateScore = (isCorrect) => {
+    if (isCorrect) {
+      setScore((prevScore) => prevScore + 1);
+    }
+  };
 
   return (
     <>
@@ -45,12 +84,14 @@ const Quiz = () => {
           key={questions[currentQuestion]._id} 
           question={questions[currentQuestion]} 
           onSubmit={handleAnsSubmit}
+          updateScore={updateScore}
         />
       ) : (
-        currentQuestion === questions.length && (
+        quizCompleted && ( 
         <>
           <h2 id='congrats'>Congratulations! You have completed the quiz.</h2>
-          <Link to={`/`}>  <button id='backtohomepage'>back to homepage</button></Link> 
+          <h4 id="score-display"> Total Score: {score}/{questions.length}</h4>
+          <Link to={`/`}>  <button id='backtohomepage'>Back to homepage</button></Link>
         </>
       )
       )}

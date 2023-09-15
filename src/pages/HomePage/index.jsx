@@ -18,9 +18,10 @@ const HomePage = () => {
             <div className='undernav'>
             <h1 id='hometitle'>Quizzes</h1>
            <Link to={`/createquiz`}><button id='createbutton'>Create Quiz</button></Link>
+           <Carousel />
             </div>
-              <Carousel />
-              <br />
+            
+             
             </>
 
         )
