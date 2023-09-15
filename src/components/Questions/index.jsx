@@ -5,11 +5,12 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
 import "../../pages/Quiz/quiz.css";
 
-const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
+const questions = ({ question, onSubmit, onNextQuestion, currentQuestion, updateScore }) => {
     const [clicked, setClicked] = useState(Array(4).fill(false));
     const [isAnsCorrect, setIsAnsCorrect] = useState(null);
     const [seconds, setSeconds] = useState(60);
     const [warning, setWarning] = useState(false);
+    const [score, setScore] = useState(0)
 
     const answers = question.answer_choices;
 
@@ -52,11 +53,12 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
 
     const correctAns = answer => {
         if (answer === question.correct_answer) {
-            // console.log(question)
-            // console.log("correct")
+            //console.log(question)
+            console.log("correct")
             setIsAnsCorrect(true);
+            updateScore(true)
         } else {
-            // console.log("incorrect")
+            console.log("incorrect")
             // console.log(question)
 
             setIsAnsCorrect(false);
@@ -69,7 +71,7 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
                 <h2 id="questiontitle">{question.question}</h2>
                 <div className="container">
                     <div id="qa_section">
-                        {warning && <p>Time is almost up!</p>}
+                        {warning && <p id="timerwarning">Time is almost up!</p>}
 
                         <p>
                             Timer:{" "}
@@ -97,7 +99,8 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
                                 Submit
                             </button>
                         </div>
-                        <div id="timersection">
+                    </div>
+                    <div id="timersection">
                             <p id="timer">Timer: {seconds}</p>
                             <Player
                                 id="timerlottie"
@@ -105,12 +108,11 @@ const questions = ({ question, onSubmit, onNextQuestion, currentQuestion }) => {
                                 loop={true}
                                 src="https://lottie.host/06529719-8f17-4ea8-b07d-3e25376bce76/lyhJEsLaGx.json"></Player>
                         </div>
-                    </div>
                 </div>
             </div>
             <Link to={`/`}>
                 {" "}
-                <FontAwesomeIcon icon={faCircleArrowLeft} id="backarrow" />{" "}
+                <FontAwesomeIcon icon={faCircleArrowLeft} id="backarrow2" />{" "}
             </Link>
         </>
     );
