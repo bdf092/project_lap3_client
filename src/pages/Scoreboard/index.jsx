@@ -1,9 +1,11 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTable } from "react-table";
 import './scoreboard.css'
 import UserCard from "../../components/UserCard";
+import axios from "axios";
 const Scoreboard = () => {
-    const testUsers = [
+    const [users, setUsers] = useState([]);
+    const testUsers0 = [
         { id: 1, name: "FantasticRabbit42", quizzesPlayed: 10 },
         { id: 2, name: "LuckyTiger7", quizzesPlayed: 2 },
         { id: 3, name: "WhisperingStar23", quizzesPlayed: 4 },
@@ -16,28 +18,39 @@ const Scoreboard = () => {
         { id: 10, name: "MysticFox36", quizzesPlayed: 369 }
     ];
 
+    
+    useEffect(() => {
+        const getUsers = async () => {
+            try {
+            const response = await axios.get("https://think-fast.onrender.com/users");
+            setUsers(response.data);
+            } catch (error) {
+            console.error("Error fetching users:", error);
+            }
+        };
+
+        getUsers();
+    }, []);
+        
     const columns = useMemo(
         () => [
         {
-            Header: "ID",
-            accessor: "id",
-        },
-        {
-            Header: "Username",
-            accessor: "name",
+            Header: "Player",
+            accessor: "username",
         },
         {
             Header: "Quizzes Played",
             accessor: "quizzesPlayed",
         },
         ],
-        []
+        [users]
     );
 
-    const sortedUsers = testUsers.sort((a, b) => b.quizzesPlayed - a.quizzesPlayed);
+
+    const sortedUsers = users.sort((a, b) => b.quizzesPlayed - a.quizzesPlayed);
     const data = useMemo(() => sortedUsers, []);
-    const top3Users = testUsers.slice(0, 3);
-    console.log(top3Users);
+    const top3Users = users.slice(0, 3);
+
 
     const {
         getTableProps,
@@ -45,7 +58,7 @@ const Scoreboard = () => {
         headerGroups,
         rows,
         prepareRow,
-    } = useTable({ columns, data });
+    } = useTable({ columns, data: users });
 
     
     return (
@@ -56,7 +69,8 @@ const Scoreboard = () => {
 
                     <UserCard top3users={top3Users}/>
                 </div>
-                <table {...getTableProps()}>
+                {users.length > 0 ? (
+                    <table {...getTableProps()}>
                     <thead>
                     {headerGroups.map((headerGroup) => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
@@ -79,6 +93,10 @@ const Scoreboard = () => {
                     })}
                     </tbody>
                 </table>
+                    ) : (
+                    // Render a loading message or handle the case when there's no data
+                    <h2>Couldn't get users</h2>
+                    )}
             </div>
                 
 

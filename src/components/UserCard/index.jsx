@@ -19,12 +19,24 @@ const UserCard = ({ top3users }) => {
 
     console.log("newtop3users:", newtop3users);
 
+    /*
     return (
         <div className="card-grid">
             {newtop3users.map((card) => (
-                <div className="card" key={card.id}>
-                    <h2 className="card-title">{card.name}</h2>
-                    <p className="card-content">{card.quizzesPlayed}</p>
+                <div className="card" key={card?.id || "na"}>
+                    <h2 className="card-title">{card?.username || "N/A"}</h2>
+                    <h4 className="card-content">{card?.quizzesPlayed || 0}</h4>
+                </div>
+            ))}
+        </div>
+    );
+    */
+    return (
+        <div className="card-grid">
+            {newtop3users.map((card, index) => (
+                <div className="cardUser" key={index}>
+                    <h2 className="card-title">{card?.username || "N/A"}</h2>
+                    <p className="card-content">{card?.quizzesPlayed || 0}</p>
                 </div>
             ))}
         </div>

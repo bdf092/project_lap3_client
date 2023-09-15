@@ -26,6 +26,39 @@ const Quiz = () => {
     displayQuestions()
   }, [id])
 
+  
+    const updateQuizzesPlayed = async (userId) => {
+      try {
+        console.log(localStorage)
+        const response = await axios.patch(`http://localhost:3000/users/${userId}`);
+      } catch (error) {
+        console.error('Error updating quizzesPlayed:', error);
+      }
+    };
+  
+
+  useEffect(() => {
+    const getUserId = async (userId) => {
+      try {
+        console.log(localStorage)
+      } catch (error) {
+        console.error('Error getting userId:', error);
+      }
+    };
+  })
+
+  function getAllCookies() {
+    const cookies = document.cookie.split(';');
+    const cookieObject = {};
+  
+    for (const cookie of cookies) {
+      const [name, value] = cookie.trim().split('=');
+      cookieObject[name] = decodeURIComponent(value);
+    }
+  
+    return cookieObject;
+  }
+
   const handleAnsSubmit = (isCorrect) => {
     if (isCorrect) {
       setScore((prevScore) => prevScore + 1);
@@ -34,6 +67,10 @@ const Quiz = () => {
     setCurrentQuestion((prevIndex) => prevIndex + 1);
     if (currentQuestion === questions.length - 1) {
       setQuizCompleted(true);
+      updateQuizzesPlayed(); 
+      //
+      const allCookies = getAllCookies();
+      console.log('All cookies:', allCookies);
     }
   }
 
